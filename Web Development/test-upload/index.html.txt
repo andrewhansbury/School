@@ -1,8 +1,0 @@
-<!DOCTYPE hmtl>
-
-<html>
-  <h1> Hello Professor! </h1>
-  <body>
-  <p> This is my test site </p>
-  </body>
- <html>
