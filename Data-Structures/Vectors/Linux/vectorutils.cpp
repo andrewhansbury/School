@@ -120,6 +120,8 @@ void sort(std::vector<int> &v)
 
 bool remove_first(std::vector<int> &v, int del)
 {
+    return true;
+
 }
 
 void printArray(std::vector<int> v)
@@ -139,7 +141,7 @@ int main()
     std::vector<int> l2{};
     //cout << equivalent(l1, l2);
 
-    printArray(l1);
-    sort(l1);
-    printArray(l1);
+    printArray(list2);
+    sort(list2);
+    printArray(list2);
 }
