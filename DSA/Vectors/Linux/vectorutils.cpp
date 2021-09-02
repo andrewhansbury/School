@@ -56,14 +56,6 @@ int count(const std::vector<int> &v, int seek)
     return counter;
 }
 
-template <typename K, typename V>
-void print_map(std::unordered_map<K, V> const &m)
-{
-    for (auto const &pair : m)
-    {
-        std::cout << "{" << pair.first << ": " << pair.second << "}\n";
-    }
-}
 
 bool equivalent(const std::vector<int> &v1, const std::vector<int> &v2)
 {
@@ -78,43 +70,6 @@ bool equivalent(const std::vector<int> &v1, const std::vector<int> &v2)
     }
     return true;
 }
-
-
-    // unordered_map<int, int> v1_frequencies;
-    // unordered_map<int, int> v2_frequencies;
-
-    // for (int num : v1)
-    // {
-    //     if (v1_frequencies.find(num) == v1_frequencies.end())
-    //     {
-    //         v1_frequencies[num] = 1;
-    //     }
-    //     else
-    //     {
-    //         v1_frequencies[num]++;
-    //     }
-    // }
-
-    // for (int num : v2)
-    // {
-    //     if (v2_frequencies.find(num) == v2_frequencies.end())
-    //     {
-    //         v2_frequencies[num] = 1;
-    //     }
-    //     else
-    //     {
-    //         v2_frequencies[num]++;
-    //     }
-    // }
-
-    // if (v1_frequencies == v2_frequencies)
-    // {
-    //     return true;
-    // }
-
-    // return false;
-
-
 
 
 void sort(std::vector<int> &v)
