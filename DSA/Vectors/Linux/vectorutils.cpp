@@ -1,3 +1,9 @@
+//  Name: Andrew Hansbury
+//  Assignment number: 1
+//  Assignment: Vectors
+//  File name: vectorutils.cpp
+//  Date last modified: September 1, 2021
+//  Honor statement: I have neither given nor received any unauthorized help on this assignment. 
 #include <iostream>
 #include <vector>
 #include "vectorutils.h"
@@ -40,6 +46,7 @@ int count(const std::vector<int> &v, int seek)
     int counter = 0;
     for (int i = 0; i < v.size(); i++)
     {
+        
 
         if (v[i] == seek)
         {
@@ -60,40 +67,55 @@ void print_map(std::unordered_map<K, V> const &m)
 
 bool equivalent(const std::vector<int> &v1, const std::vector<int> &v2)
 {
-    unordered_map<int, int> v1_frequencies;
-    unordered_map<int, int> v2_frequencies;
+    for (int i =0; i < v1.size(); i++){
+        if (find(v2, v1[i]) == -1){
+            return false;
 
-    for (int num : v1)
-    {
-        if (v1_frequencies.find(num) == v1_frequencies.end())
-        {
-            v1_frequencies[num] = 1;
         }
-        else
-        {
-            v1_frequencies[num]++;
-        }
+        if (count(v1, v1[i]) != count(v2, v1[i])){
+            return false;
+        } 
     }
-
-    for (int num : v2)
-    {
-        if (v2_frequencies.find(num) == v2_frequencies.end())
-        {
-            v2_frequencies[num] = 1;
-        }
-        else
-        {
-            v2_frequencies[num]++;
-        }
-    }
-
-    if (v1_frequencies == v2_frequencies)
-    {
-        return true;
-    }
-
-    return false;
+    return true;
 }
+
+
+    // unordered_map<int, int> v1_frequencies;
+    // unordered_map<int, int> v2_frequencies;
+
+    // for (int num : v1)
+    // {
+    //     if (v1_frequencies.find(num) == v1_frequencies.end())
+    //     {
+    //         v1_frequencies[num] = 1;
+    //     }
+    //     else
+    //     {
+    //         v1_frequencies[num]++;
+    //     }
+    // }
+
+    // for (int num : v2)
+    // {
+    //     if (v2_frequencies.find(num) == v2_frequencies.end())
+    //     {
+    //         v2_frequencies[num] = 1;
+    //     }
+    //     else
+    //     {
+    //         v2_frequencies[num]++;
+    //     }
+    // }
+
+    // if (v1_frequencies == v2_frequencies)
+    // {
+    //     return true;
+    // }
+
+    // return false;
+
+
+
 
 void sort(std::vector<int> &v)
 {
@@ -120,28 +142,31 @@ void sort(std::vector<int> &v)
 
 bool remove_first(std::vector<int> &v, int del)
 {
-    return true;
+    
+    for (int i = 0; i <v.size(); i++){
+        if (v[i] == del){
+            
+            int j = i;
+        
+            while (j < v.size()-1){
+                v[j] = v[j+1];
+                j++;
+            }
+            v.resize(v.size()-1);
+            return true;
+        }
+    }
+    
+    return false;
 
 }
 
 void printArray(std::vector<int> v)
 {
+    cout << "{";
     for (int num : v)
     {
-        cout << to_string(num) + " ";
+        cout << to_string(num) + ", ";
     }
-    cout << endl;
-}
-
-int main()
-{
-    std::vector<int> list{1, 5, 3, 10, 3, 7, 5, 2};
-    std::vector<int> list2{5, 1, 3, 10, 3, 7, 5, 2};
-    std::vector<int> l1{};
-    std::vector<int> l2{};
-    //cout << equivalent(l1, l2);
-
-    printArray(list2);
-    sort(list2);
-    printArray(list2);
+    cout << "}" << endl;
 }

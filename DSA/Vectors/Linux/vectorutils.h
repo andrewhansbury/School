@@ -38,7 +38,7 @@ void sort(std::vector<int> &v);
 //  del from vector v.  (The first occurrence
 //  has the lowest index.)
 //  The vector is unaffected if del is not an
-//  element of v.
+//  element of v. 
 //  The function returns true if a element is
 //  removed; otherwise, it returns false if
 //  del does not appear in v.
