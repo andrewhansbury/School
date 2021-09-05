@@ -3,33 +3,28 @@
     <title>HW02</title>
     <h1>HW02 - Multiplication Table</h1>
 
-    <body>
-        <?php 
-        function convertHex($number){
-            echo $number .=' <br>';
+    <?php 
+    function convertHex($number){
             
             $converted = '';
-            while ($number!=0){
-                //$digit = 0;
+            while ($number>0){
                 $digit = (int) $number % 16;
-                echo $digit .= '<br>';
-
                 if ($digit < 10){
-                    #echo 'poop <br>';
-                    $converted .= strval($digit);
-                    echo $converted;
+                    $converted = strval($digit) . "" . $converted;
                 }
                 else{
-                    $converted .= chr($digit + 55);
-                    echo $converted;
+                    $converted = chr($digit + 55) . "" . $converted;
                 }
-                $number = (int) $number/16;
-            
-            
+                $number =  intdiv((int)$number, 16);
             }
-            echo $converted .= "asjbfie";
+            return $converted;
         }
-        convertHex(122);
+    ?>
+
+    <body>
+        <?php 
+        
+        echo "<tr> <th> Multiply </th> </tr>";
         ?>
     </body>
 
