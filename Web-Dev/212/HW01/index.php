@@ -5,12 +5,12 @@
 <script>
     function get_window_width(){
         var width = window.innerWidth;
-        return width 
+        return width + " pixels"
     }
 
     function get_window_height(){
         var height = window.innerHeight;
-        return height 
+        return height + " pixels"
     }
  </script>
 
