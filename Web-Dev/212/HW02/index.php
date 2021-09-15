@@ -51,7 +51,6 @@ function convertHex($number)
         <tr>
          <th rowspan = 2, colspan =2>Multiply </th> ";
 
-
     for ($i = 1; $i < 21; $i++) {
         echo '<th>' . $i . '</th>';
     }
@@ -67,8 +66,6 @@ function convertHex($number)
 
     for ($i = 1; $i < 21; $i++) {
         echo '<tr>';
-
-
         echo '<th>' . $i . '</th>';
         echo '<th>' . convertHex($i) . '</th>';
 
