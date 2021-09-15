@@ -1,9 +1,3 @@
-//  Name: Andrew Hansbury
-//  Assignment number: 1
-//  Assignment: Vectors
-//  File name: vectorutils.cpp
-//  Date last modified: September 1, 2021
-//  Honor statement: I have neither given nor received any unauthorized help on this assignment.
 #include <iostream>
 #include <vector>
 #include "vectorutils.h"
@@ -55,20 +49,50 @@ int count(const std::vector<int> &v, int seek)
     return counter;
 }
 
+template <typename K, typename V>
+void print_map(std::unordered_map<K, V> const &m)
+{
+    for (auto const &pair : m)
+    {
+        std::cout << "{" << pair.first << ": " << pair.second << "}\n";
+    }
+}
+
 bool equivalent(const std::vector<int> &v1, const std::vector<int> &v2)
 {
-    for (int i = 0; i < v1.size(); i++)
+    unordered_map<int, int> v1_frequencies;
+    unordered_map<int, int> v2_frequencies;
+
+    for (int num : v1)
     {
-        if (find(v2, v1[i]) == -1)
+        if (v1_frequencies.find(num) == v1_frequencies.end())
         {
-            return false;
+            v1_frequencies[num] = 1;
         }
-        if (count(v1, v1[i]) != count(v2, v1[i]))
+        else
         {
-            return false;
+            v1_frequencies[num]++;
         }
     }
-    return true;
+
+    for (int num : v2)
+    {
+        if (v2_frequencies.find(num) == v2_frequencies.end())
+        {
+            v2_frequencies[num] = 1;
+        }
+        else
+        {
+            v2_frequencies[num]++;
+        }
+    }
+
+    if (v1_frequencies == v2_frequencies)
+    {
+        return true;
+    }
+
+    return false;
 }
 
 void sort(std::vector<int> &v)
@@ -96,33 +120,29 @@ void sort(std::vector<int> &v)
 
 bool remove_first(std::vector<int> &v, int del)
 {
-
-    for (int i = 0; i < v.size(); i++)
-    {
-        if (v[i] == del)
-        {
-
-            int j = i;
-
-            while (j < v.size() - 1)
-            {
-                v[j] = v[j + 1];
-                j++;
-            }
-            v.resize(v.size() - 1);
-            return true;
-        }
-    }
-
-    return false;
 }
 
 void printArray(std::vector<int> v)
 {
-    cout << "{";
     for (int num : v)
     {
-        cout << to_string(num) + ", ";
+        cout << to_string(num) + " ";
     }
-    cout << "}" << endl;
+    cout << endl;
 }
+
+int main()
+{
+    std::vector<int> list{1, 5, 3, 10, 3, 7, 5, 2};
+    std::vector<int> list2{5, 1, 3, 10, 3, 7, 5, 2};
+    std::vector<int> l1{};
+    std::vector<int> l2{};
+    //cout << equivalent(l1, l2);
+
+    printArray(l1);
+    sort(l1);
+    printArray(l1);
+}
+
+
+//fix equivalent and write remove_first
