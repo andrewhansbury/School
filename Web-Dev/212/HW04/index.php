@@ -46,16 +46,16 @@
 </head>
 
 <body>
-    <h1 class="mobile"> HW04 for Cell Phones - Andrew Hansbury </h2>
-        <h1 class="computer"> HW04 for Computers - Andrew Hansbury </h2>
+    <h1 class="mobile"> HW04 for Cell Phones - Andrew Hansbury </h1>
+    <h1 class="computer"> HW04 for Computers - Andrew Hansbury </h1>
 
-            <?php
+    <?php
 
-            foreach ($pictures as $value) {
-                echo "<img class = col-3 src = HW04_Artifacts/" . $value . " width = 100% />";
-            }
+    foreach ($pictures as $value) {
+        echo "<img class = col-3 src = HW04_Artifacts/" . $value . " width = 100% />";
+    }
 
-            ?>
+    ?>
 
 </body>
 
