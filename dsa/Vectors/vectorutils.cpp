@@ -67,6 +67,10 @@ bool equivalent(const std::vector<int> &v1, const std::vector<int> &v2)
         {
             return false;
         }
+        if (count(v2, v2[i]) != count(v1, v2[i]))
+        {
+            return false;
+        }
     }
     return true;
 }
