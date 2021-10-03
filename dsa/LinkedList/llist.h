@@ -59,54 +59,54 @@ public:
     // sentinels directly point to each other.
     LinkedList();
 
-    // Copy constructor makes a copy of the other object's list
-    LinkedList(const LinkedList &other);
+    // // Copy constructor makes a copy of the other object's list
+    // LinkedList(const LinkedList &other);
 
-    // The destructor deallocates the memory held by the list
-    ~LinkedList();
+    // // The destructor deallocates the memory held by the list
+    // ~LinkedList();
 
-    // Assignment operator
-    LinkedList &operator=(const LinkedList &other);
+    // // Assignment operator
+    // LinkedList &operator=(const LinkedList &other);
 
-    // Returns an iterator to the first element in the list
-    Iterator begin() const;
+    // // Returns an iterator to the first element in the list
+    // Iterator begin() const;
 
-    // Returns an iterator to the position just past the end of the list
-    Iterator end() const;
+    // // Returns an iterator to the position just past the end of the list
+    // Iterator end() const;
 
-    // Inserts an item into the list before
-    // the position indicated by the iterator.
-    // To append an item to the back of list lst, use
-    //      lst.insert(lst.end(), item);
-    // To prepend an item to the front of list lst, use
-    //      lst.insert(lst.begin(), item);
-    // The insertion does not change the iterator's position.
-    void insert(const Iterator &iter, const string &item);
+    // // Inserts an item into the list before
+    // // the position indicated by the iterator.
+    // // To append an item to the back of list lst, use
+    // //      lst.insert(lst.end(), item);
+    // // To prepend an item to the front of list lst, use
+    // //      lst.insert(lst.begin(), item);
+    // // The insertion does not change the iterator's position.
+    // void insert(const Iterator &iter, const string &item);
 
-    // Removes the element at the position indicated by the iterator.
-    // After the removal the iterator will point to the element after
-    // the removed element.
-    void remove(Iterator &iter);
+    // // Removes the element at the position indicated by the iterator.
+    // // After the removal the iterator will point to the element after
+    // // the removed element.
+    // void remove(Iterator &iter);
 
-    // Returns an iterator to the first occurrence of the element
-    // seek.  Returns the list's end iterator if seek is not present
-    // in the list.
-    Iterator find(const string &seek) const;
+    // // Returns an iterator to the first occurrence of the element
+    // // seek.  Returns the list's end iterator if seek is not present
+    // // in the list.
+    // Iterator find(const string &seek) const;
 
-    // Returns the number of elements in the linked list.
-    int length() const;
+    // // Returns the number of elements in the linked list.
+    // int length() const;
 
-    // Removes all the elements in the linked list.
-    void clear();
+    // // Removes all the elements in the linked list.
+    // void clear();
 
-    // Returns true if other contains the same elements,
-    // in the same order; otherwise, returns false.
-    bool operator==(const LinkedList &other) const;
+    // // Returns true if other contains the same elements,
+    // // in the same order; otherwise, returns false.
+    // bool operator==(const LinkedList &other) const;
 
-    // Returns true if the content of the other list differs from
-    // this list (missing or extra elements, different element order,
-    // etc.; otherwise, returns false.
-    bool operator!=(const LinkedList &other) const;
+    // // Returns true if the content of the other list differs from
+    // // this list (missing or extra elements, different element order,
+    // // etc.; otherwise, returns false.
+    // bool operator!=(const LinkedList &other) const;
 };
 
 #endif
