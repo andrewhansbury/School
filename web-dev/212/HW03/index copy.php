@@ -1,5 +1,7 @@
 <!DOCTYPE hmtl>
 <html>
+<title>HW03</title>
+
 
 <head>
     <title>HW03</title>
@@ -19,6 +21,7 @@
         border: 1px solid black;
     }
 </style>
+
 
 
 <?php
@@ -88,34 +91,29 @@ function printTable($color, $base)
 ?>
 
 
-
 <body>
     <h1>HW03 - Multiplication Table</h1>
 
+
     <?php
-    $colors = ["White", "Lightblue", "Yellow", "Coral", "Lightgreen"];
+    print_r($_POST);
     ?>
+
+
 
     <form method="POST" action="index.php">
         <label for=colors> Select your background: Background: </label>
         <select name="color">
-
-            <?php
-
-            for ($i = 0; $i < count($colors); $i++) {
-                if ($_POST['color'] != $colors[$i]) {
-                    echo "<option value = $colors[$i]> $colors[$i] </option>";
-                    echo "selected";
-                } else {
-                    echo "<option value = $colors[$i] selected> $colors[$i]   </option>";
-                }
-            }
-            ?>
+            <option value=White> White </option>
+            <option value=Lightblue> Lightblue </option>
+            <option value=Yellow> Yellow </option>
+            <option value=Coral> Coral </option>
+            <option value=Lightgreen> Lightgreen </option>
         </select>
 
         <br>
 
-        <p>Select the number base:</p>
+        <p>Select the number base</p>
 
 
         <?php
@@ -128,16 +126,17 @@ function printTable($color, $base)
         echo "</form>";
 
 
+
         if (isset($_POST['color'])) {
-            $background = $_POST['color'];
+            $fcolor = $_POST['color'];
             $base_val = $_POST['num'];
-            echo "<h1> Base " . $base_val . "</h1> <br>";
-            printTable($background, $base_val);
+            printTable($fcolor, $base_val);
         } else {
-            $background = "lightblue";
+            $fcolor = "lightblue";
             $base_val = 10;
         }
         ?>
+
 
 
 </body>
