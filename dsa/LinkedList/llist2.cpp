@@ -18,10 +18,7 @@ LinkedList::LinkedList() : head{&LinkedList::Node("*HEAD*")}, tail{&LinkedList::
     tail->next = nullptr;
 };
 
-LinkedList::LinkedList::getHead()
-{
-    return this->head;
-}
+
 
 int main()
 {
