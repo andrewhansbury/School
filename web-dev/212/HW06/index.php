@@ -33,7 +33,7 @@
         $write_file = fopen("results.txt", "w");
         fwrite($write_file, $full_list);
         fclose($write_file);
-        echo " <form method=get action=download.php> <button type=submit>Download</button> </form>";
+        echo " <form method=get action=.php> <button type=submit>Download</button> </form>";
     }
     ?>
 
