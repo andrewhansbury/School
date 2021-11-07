@@ -2,15 +2,27 @@ from selenium import webdriver
 import mysql.connector
 
 
-# driver = webdriver.Chrome()
-# driver.get("https://www.google.com/")
+driver = webdriver.Chrome()
+driver.get("https://www.southern.edu/administration/food/index.html")
 
-conn = mysql.connector.connect(host="localhost", user="andrewhansbury",
-                               password="m99c.xent", database="andrewhansbury_Menu")
+days = []
 
-mycursor = conn.cursor()
 
-mycursor.execute()
+titles = driver.find_elements_by_xpath(
+    "/html/body/div[2]/div/div/main/div[2]/div/div/div")
 
-for x in mycursor:
-    print(x)
+x = 0
+for title in titles:
+    print(f"{x}: ", title)
+    x += 1
+    title.click()
+
+
+# conn = mysql.connector.connect(host="sql5.freemysqlhosting.net", user="sql5449228",
+#                                password="APtb7nqKgv", database="sql5449228")
+
+# mycursor = conn.cursor()
+
+# mycursor.execute("SHOW TABLES")
+# for x in mycursor:
+#     print(x)
