@@ -180,154 +180,154 @@ int main()
     //
     //
     //
-    // std::cout << "\n--------------10 Elements--------------\n";
-    // populate_vector(vec_10, 10);
-    // timer.start();
-    // selection_sort(vec_10);
-    // std::cout << "Selection Sort (10 Elements): " << timer.elapsed() << " seconds";
-    // timer.reset();
+    std::cout << "\n--------------10 Elements--------------\n";
+    populate_vector(vec_10, 10);
+    timer.start();
+    selection_sort(vec_10);
+    std::cout << "Selection Sort (10 Elements): " << timer.elapsed() << " seconds";
+    timer.reset();
 
-    // populate_vector(vec_10, 10);
-    // timer.start();
-    // insertionSort(vec_10);
-    // std::cout << "Insertion Sort (10 Elements): " << timer.elapsed() << " seconds";
-    // timer.reset();
+    populate_vector(vec_10, 10);
+    timer.start();
+    insertionSort(vec_10);
+    std::cout << "Insertion Sort (10 Elements): " << timer.elapsed() << " seconds";
+    timer.reset();
 
-    // populate_vector(vec_10, 10);
-    // timer.start();
-    // exhange_sort(vec_10);
-    // std::cout << "Exchange Sort (10 Elements): " << timer.elapsed() << " seconds";
-    // timer.reset();
+    populate_vector(vec_10, 10);
+    timer.start();
+    exhange_sort(vec_10);
+    std::cout << "Exchange Sort (10 Elements): " << timer.elapsed() << " seconds";
+    timer.reset();
 
-    // populate_vector(vec_10, 10);
-    // timer.start();
-    // heapSort(vec_10);
-    // std::cout << "HeapSort (10 Elements): " << timer.elapsed() << " seconds";
-    // timer.reset();
+    populate_vector(vec_10, 10);
+    timer.start();
+    heapSort(vec_10);
+    std::cout << "HeapSort (10 Elements): " << timer.elapsed() << " seconds";
+    timer.reset();
 
-    // populate_vector(vec_10, 10);
-    // timer.start();
-    // quickSort(vec_10, 0, vec_10.size());
-    // std::cout << "QuickSort (10 Elements): " << timer.elapsed() << " seconds";
-    // timer.reset();
+    populate_vector(vec_10, 10);
+    timer.start();
+    quickSort(vec_10, 0, vec_10.size());
+    std::cout << "QuickSort (10 Elements): " << timer.elapsed() << " seconds";
+    timer.reset();
 
-    // std::cout << std::endl;
+    std::cout << std::endl;
 
-    // // 100 Elements
-    // //
-    // //
-    // //
-    // //
-    // std::cout << "\n--------------100 Elements--------------\n";
-    // populate_vector(vec_10, 100);
-    // timer.start();
-    // selection_sort(vec_10);
-    // std::cout << "Selection Sort (100 Elements): " << timer.elapsed() << " seconds";
-    // timer.reset();
+    // 100 Elements
+    //
+    //
+    //
+    //
+    std::cout << "\n--------------100 Elements--------------\n";
+    populate_vector(vec_10, 100);
+    timer.start();
+    selection_sort(vec_10);
+    std::cout << "Selection Sort (100 Elements): " << timer.elapsed() << " seconds";
+    timer.reset();
 
-    // populate_vector(vec_10, 100);
-    // timer.start();
-    // insertionSort(vec_10);
-    // std::cout << "Insertion Sort (100 Elements): " << timer.elapsed() << " seconds";
-    // timer.reset();
+    populate_vector(vec_10, 100);
+    timer.start();
+    insertionSort(vec_10);
+    std::cout << "Insertion Sort (100 Elements): " << timer.elapsed() << " seconds";
+    timer.reset();
 
-    // populate_vector(vec_10, 100);
-    // timer.start();
-    // exhange_sort(vec_10);
-    // std::cout << "Exchange Sort (100 Elements): " << timer.elapsed() << " seconds";
-    // timer.reset();
+    populate_vector(vec_10, 100);
+    timer.start();
+    exhange_sort(vec_10);
+    std::cout << "Exchange Sort (100 Elements): " << timer.elapsed() << " seconds";
+    timer.reset();
 
-    // populate_vector(vec_10, 100);
-    // timer.start();
-    // heapSort(vec_10);
-    // std::cout << "HeapSort (100 Elements): " << timer.elapsed() << " seconds";
-    // timer.reset();
+    populate_vector(vec_10, 100);
+    timer.start();
+    heapSort(vec_10);
+    std::cout << "HeapSort (100 Elements): " << timer.elapsed() << " seconds";
+    timer.reset();
 
-    // populate_vector(vec_10, 100);
-    // timer.start();
-    // quickSort(vec_10, 0, vec_10.size());
-    // std::cout << "QuickSort (100 Elements): " << timer.elapsed() << " seconds";
-    // timer.reset();
+    populate_vector(vec_10, 100);
+    timer.start();
+    quickSort(vec_10, 0, vec_10.size());
+    std::cout << "QuickSort (100 Elements): " << timer.elapsed() << " seconds";
+    timer.reset();
 
-    // std::cout << std::endl;
+    std::cout << std::endl;
 
-    // // 1000 Elements
-    // //
-    // //
-    // //
-    // //
-    // std::cout << "\n--------------1000 Elements--------------\n";
-    // populate_vector(vec_10, 1000);
-    // timer.start();
-    // selection_sort(vec_10);
-    // std::cout << "Selection Sort (1000 Elements): " << timer.elapsed() << " seconds";
-    // timer.reset();
+    // 1000 Elements
+    //
+    //
+    //
+    //
+    std::cout << "\n--------------1000 Elements--------------\n";
+    populate_vector(vec_10, 1000);
+    timer.start();
+    selection_sort(vec_10);
+    std::cout << "Selection Sort (1000 Elements): " << timer.elapsed() << " seconds";
+    timer.reset();
 
-    // populate_vector(vec_10, 1000);
-    // timer.start();
-    // insertionSort(vec_10);
-    // std::cout << "Insertion Sort (1000 Elements): " << timer.elapsed() << " seconds";
-    // timer.reset();
+    populate_vector(vec_10, 1000);
+    timer.start();
+    insertionSort(vec_10);
+    std::cout << "Insertion Sort (1000 Elements): " << timer.elapsed() << " seconds";
+    timer.reset();
 
-    // populate_vector(vec_10, 1000);
-    // timer.start();
-    // exhange_sort(vec_10);
-    // std::cout << "Exchange Sort (1000 Elements): " << timer.elapsed() << " seconds";
-    // timer.reset();
+    populate_vector(vec_10, 1000);
+    timer.start();
+    exhange_sort(vec_10);
+    std::cout << "Exchange Sort (1000 Elements): " << timer.elapsed() << " seconds";
+    timer.reset();
 
-    // populate_vector(vec_10, 1000);
-    // timer.start();
-    // heapSort(vec_10);
-    // std::cout << "HeapSort (1000 Elements): " << timer.elapsed() << " seconds";
-    // timer.reset();
+    populate_vector(vec_10, 1000);
+    timer.start();
+    heapSort(vec_10);
+    std::cout << "HeapSort (1000 Elements): " << timer.elapsed() << " seconds";
+    timer.reset();
 
-    // populate_vector(vec_10, 1000);
-    // timer.start();
-    // quickSort(vec_10, 0, vec_10.size());
-    // std::cout << "QuickSort (1000 Elements): " << timer.elapsed() << " seconds";
-    // timer.reset();
+    populate_vector(vec_10, 1000);
+    timer.start();
+    quickSort(vec_10, 0, vec_10.size());
+    std::cout << "QuickSort (1000 Elements): " << timer.elapsed() << " seconds";
+    timer.reset();
 
-    // std::cout << std::endl;
+    std::cout << std::endl;
 
-    // // 10000 Elements
-    // //
-    // //
-    // //
-    // //
-    // std::cout << "\n--------------10000 Elements--------------\n";
-    // populate_vector(vec_10, 10000);
-    // timer.start();
-    // selection_sort(vec_10);
-    // std::cout << "Selection Sort (10000 Elements): " << timer.elapsed() << " seconds";
-    // timer.reset();
+    // 10000 Elements
+    //
+    //
+    //
+    //
+    std::cout << "\n--------------10000 Elements--------------\n";
+    populate_vector(vec_10, 10000);
+    timer.start();
+    selection_sort(vec_10);
+    std::cout << "Selection Sort (10000 Elements): " << timer.elapsed() << " seconds";
+    timer.reset();
 
-    // populate_vector(vec_10, 10000);
-    // timer.start();
-    // insertionSort(vec_10);
-    // std::cout << "Insertion Sort (10000 Elements): " << timer.elapsed() << " seconds";
-    // timer.reset();
+    populate_vector(vec_10, 10000);
+    timer.start();
+    insertionSort(vec_10);
+    std::cout << "Insertion Sort (10000 Elements): " << timer.elapsed() << " seconds";
+    timer.reset();
 
-    // populate_vector(vec_10, 10000);
-    // timer.start();
-    // exhange_sort(vec_10);
-    // std::cout << "Exchange Sort (10000 Elements): " << timer.elapsed() << " seconds";
-    // timer.reset();
+    populate_vector(vec_10, 10000);
+    timer.start();
+    exhange_sort(vec_10);
+    std::cout << "Exchange Sort (10000 Elements): " << timer.elapsed() << " seconds";
+    timer.reset();
 
-    // populate_vector(vec_10, 10000);
-    // timer.start();
-    // heapSort(vec_10);
-    // std::cout << "HeapSort (10000 Elements): " << timer.elapsed() << " seconds";
-    // timer.reset();
+    populate_vector(vec_10, 10000);
+    timer.start();
+    heapSort(vec_10);
+    std::cout << "HeapSort (10000 Elements): " << timer.elapsed() << " seconds";
+    timer.reset();
 
-    // populate_vector(vec_10, 10000);
-    // timer.start();
-    // quickSort(vec_10, 0, vec_10.size());
-    // std::cout << "QuickSort (10000 Elements): " << timer.elapsed() << " seconds";
-    // timer.reset();
+    populate_vector(vec_10, 10000);
+    timer.start();
+    quickSort(vec_10, 0, vec_10.size());
+    std::cout << "QuickSort (10000 Elements): " << timer.elapsed() << " seconds";
+    timer.reset();
 
-    // std::cout << std::endl;
+    std::cout << std::endl;
 
-    // 100000 Elements
+    //100000 Elements
     //
     //
     //

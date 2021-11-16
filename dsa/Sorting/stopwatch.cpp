@@ -1,6 +1,6 @@
 
 #include <iostream>
-#include "Stopwatch.h"
+#include "stopwatch.h"
 // Creates a Stopwatch object
 // A newly minted object is not running and is in a "reset" state
 Stopwatch::Stopwatch(): start_time(0), running(false), elapsed_time(0.0) {}
