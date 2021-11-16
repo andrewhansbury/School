@@ -1,6 +1,6 @@
 #include <vector>
 #include <iostream>
-#include <stopwatch.h>
+#include "stopwatch.h"
 
 template <typename T>
 void selection_sort(std::vector<T>& v) {
@@ -15,7 +15,7 @@ void selection_sort(std::vector<T>& v) {
                 small = j; // Found a smaller value // Swap elements at position iter and small, if a smaller value was found if (i != small)
         if (i != small)
             std::swap(v[i], v[small]);
-        break;            
+        //break;            
     }
 }
 
@@ -32,15 +32,40 @@ void exhange_sort(std::vector<T>& vec){
                 sorted = false;
             }
         }
-        break;
+        //break;
         k++;
     }
 
 }
 
+std::vector<int> make_vector(std::vector <int> vec, int size ){
+    int x;
+    for (int i = 0; i <size; i++){
+        x = rand() % 100 +1;
+        vec.push_back(x);
+    }
+
+    return vec;
+}
+
 
 
 int main(){
+    std::vector<int> vec_10;
+    std::vector<int> vec_100;
+    std::vector<int> vec_1000;
+    std::vector<int> vec_10000;
+    std::vector<int> vec_100000;
+
+
+
+
+    
+
+    
+
+    
+
     std::vector<int> vec = {7,2,3,1,5,4};
     //selection_sort(vec);
 
