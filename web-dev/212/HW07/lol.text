@@ -1,0 +1,23 @@
+  <?php
+
+  // $path = "./uploads/";
+  // $files = scandir($path);
+  // if(isset($_POST)){
+
+  //   echo "table";
+  //   echo "<tr>
+  //     <th></th> <th> File Name </th> <th> Size </th> <th> Pic </th>
+  //     </tr>"; 
+  //   foreach ($files as $file){
+  //     echo "<th>
+  //     <td> </td>
+  //     <td> $file </td>
+  //     <td>" . strval(filesize($file)) . "</td>
+  //     </th>";
+  //   }
+    
+    
+  //   echo "</table>";
+
+
+  ?>
