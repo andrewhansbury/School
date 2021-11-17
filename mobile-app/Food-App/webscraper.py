@@ -18,26 +18,6 @@ for title in titles:
     title.click()
 
 
-print("\n"*3)
-
-foods = driver.find_elements_by_xpath(
-    "/html/body/div[2]/div/div/main/div[2]/div/div/div")
-
-days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'
-        ]
-meals = {'Sunday': "", 'Monday': '', 'Tuesday': "",
-         'Wednesday': "", 'Thursday': "", 'Friday': "", 'Saturday': ""}
-
-x = 0
-for food in foods:
-    meals[days[x]] = food.text
-    #print(f"{x}: ", food.text)
-    # print("\n")
-    x += 1
-
-print(meals)
-
-
 # conn = mysql.connector.connect(host="sql5.freemysqlhosting.net", user="sql5449228",
 #                                password="APtb7nqKgv", database="sql5449228")
 
