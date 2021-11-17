@@ -327,7 +327,7 @@ int main()
 
     std::cout << std::endl;
 
-    //100000 Elements
+    // 100000 Elements
     //
     //
     //
@@ -365,12 +365,3 @@ int main()
 
     std::cout << std::endl;
 }
-
-//     heapSort(vec_10);
-
-//     timer.stop();
-
-//     timer.reset();
-
-//     print_vec(vec_10);
-// }
