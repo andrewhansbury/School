@@ -35,17 +35,63 @@
     }
     echo "</select> ";
 
-    //Verse search input
-    echo "<label for=\"verse\">Citation: </label>";
-    echo "<input type=\"text\" name=\"verse\">  ";
+    //passage search input
+    echo "<label for=\"passage\">Citation: </label>";
+    echo "<input type=\"text\" name=\"passage\">  ";
 
     //Submit Button
     echo "<input type=\"submit\" name=\"Submit\">";
     echo "</form>";
 
-    //Displaying the Bible Verse
+    //Displaying the Bible passage
     if (isset($_POST['Submit'])) {
-        echo "<strong>POOP</strong>";
+        $version = $_POST['Version'];
+        echo "<strong>$version</strong>";
+
+        //find passage
+
+        $passage = $_POST['passage'];
+
+        $book = substr($passage, 0, strpos($passage, " "));
+
+        $book = str_replace(".", "", $book);
+        $book = ucfirst($book);
+
+        $chap_offset = strpos($passage, ":") - strpos($passage, " ");
+
+        $chapter =  substr($passage, strpos($passage, " "), $chap_offset);
+
+        $verse = substr($passage, strpos($passage, ":"));
+
+        echo $book;
+        $sql = "SELECT `b` FROM `key_abbreviations_english` WHERE `a` = \"$book\"";
+        $result = mysqli_query($conn, $sql);
+        #echo mysqli_num_rows($result);
+        echo "<br>";
+        $res =  mysqli_fetch_row($result);
+        foreach ($res as $value) {
+            echo $value;
+        }
+        #print_r($result);
+
+        // get num for book
+        //$book_num = 
+        //SELECT `b` FROM `key_abbreviations_english` WHERE `a` = $book
+
+        //SELECT `b` FROM `key_english` WHERE n = $book
+
+        //get table 
+        //$table =
+        //SELECT `table` FROM  `bible_version_key` WHERE `version` = $version
+
+
+
+        //text query
+        //SELECT `t` FROM $table WHERE `b` = $booknum AND `c` = $chapter AND `v` = $verse
+
+
+
+
     }
 
     ?>
