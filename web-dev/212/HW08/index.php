@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <h1>Bible Text Lookup</h1>
+    <h1>Bible Text Lookup - Andrew Hansbury</h1>
 
     <?php
 
@@ -49,7 +49,6 @@
         echo "<br><strong>$version</strong>";
 
         //find passage
-
         $passage = $_POST['passage'];
         $passage = str_replace(".", "", $passage);
 
@@ -59,10 +58,13 @@
         $result = mysqli_query($conn, $sql);
         #echo mysqli_num_rows($result);
         echo "<br>";
-        $book_ID; 
-        $res =  mysqli_fetch_row($result);
-        foreach ($res as $value) {
-            $book_ID = $value;
+        $book_ID= 0; 
+        //echo print_r(r)
+        if(strpos($check_jude, "j") !== false){
+            $res =  mysqli_fetch_row($result);
+            foreach ($res as $value) {
+                $book_ID = $value;
+            }
         }
 
         if ($book_ID == 65){
@@ -136,16 +138,11 @@
             $full_response = $row["t"];
             echo "<br>" . $full_response;
 
-
         }
         
-
     }
 
     ?>
-
-
-
 
 </body>
 
