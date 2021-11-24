@@ -13,6 +13,13 @@
     $conn = mysqli_connect("localhost", "andrewhansbury", "m99c.xent", "andrewhansbury_HW08") or die("Couldn't Open Database!");
 
 
+    if ($_POST) {
+        print "<pre>POST:";
+        print_r($_POST);
+        print "</pre>";
+    }
+
+
     //Version dropdown
     echo "<form method=\"POST\">";
     echo "<label for=Version>Version: </label>";
@@ -46,7 +53,7 @@
     $version = "";
     if (isset($_POST['Submit'])) {
         $version = $_POST['Version'];
-        echo "<br><strong>$version</strong>";
+        echo "<strong>$version</strong>";
 
         //find passage
 
@@ -78,13 +85,14 @@
             $result = mysqli_query($conn, $sql);
             $row = mysqli_fetch_assoc($result);
             $full_response = $row["t"];
-            echo "<br>" . $full_response;
+            echo $full_response;
             
         }
 
         //NON JUDE
         else{
-            //Book Parsing
+
+                //Book Parsing
             $book_num = "";
             $book = strtok($passage,":"); //String up until ":"
             if (is_numeric($book[0])){
@@ -102,7 +110,9 @@
             $book = $book_num . $book;
             $book = ucfirst($book);
 
-          
+            echo "<br>Passage: " . $passage;
+            echo "";
+
             $colon_pos = strpos($passage, ":") - strpos($passage, " ");
             $chapter =  substr($passage, strpos($passage, " "), $colon_pos);
             
@@ -112,6 +122,9 @@
             }
             $verse = substr($passage, strpos($passage, ":")+1);
             
+            echo "<br>Parsed Book: " . $book . "<br>";
+            echo "Parsed Chapter: " . $chapter . "<br>";
+            echo "Parsed Verse: " . $verse . "<br>";
 
             $sql = "SELECT `b` FROM `key_abbreviations_english` WHERE `a` = \"$book\"";
             $result = mysqli_query($conn, $sql);
@@ -134,7 +147,7 @@
             $result = mysqli_query($conn, $sql);
             $row = mysqli_fetch_assoc($result);
             $full_response = $row["t"];
-            echo "<br>" . $full_response;
+            echo $full_response;
 
 
         }
@@ -143,6 +156,8 @@
     }
 
     ?>
+
+
 
 
 
