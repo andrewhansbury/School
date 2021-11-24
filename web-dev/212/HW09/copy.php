@@ -18,6 +18,7 @@
     
     echo "<h1> " . date("l") . "'s Open Stations </h1>";
 
+
     $day_num = array(
         'Sunday' => 1,
         'Monday' => 2,
@@ -32,27 +33,28 @@
     
 
     function display_data($data) {
+        echo date("Hi") . "<br>";
         $time = date("Hi");
         $output = "<table>";
     
         foreach($data as $key => $var) {
-            //$output .= '<tr>';
+         
             if ($time > $var['begintime'] && $time < $var['endtime']){
                 if($key===0) {
                     $output .= '<tr>';
                     foreach($var as $col => $val) {
-                        $output .= "<td><mark><strong>" . $col . '</strong></mark></td>';
+                        $output .= "<td><strong>" . $col . '</strong></td>';
                     }
                     $output .= '</tr>';
                     foreach($var as $col => $val) {
-                        $output .= '<td><mark><strong>' . $val . '</strong></mark></td>';
+                        $output .= '<td><strong>' . $val . '</strong></td>';
                     }
                     $output .= '</tr>';
                 }
                 else {
                     $output .= '<tr>';
                     foreach($var as $col => $val) {
-                        $output .= '<td><mark><strong>' . $val . '</strong></mark></td>';
+                        $output .= '<td><strong>' . $val . '</strong></td>';
                     }
                     $output .= '</tr>';
             
@@ -85,6 +87,8 @@
         echo $output;
     }
 
+   
+    
 
     $conn = mysqli_connect("localhost", "andrewhansbury", "m99c.xent", 
     "andrewhansbury_HW09") or die("Couldn't Open Database!");
@@ -92,6 +96,26 @@
     = location.location WHERE `dayofweek` = $today_num";
     $result = mysqli_query($conn, $sql);
     
+    
+    //print_r($result);
+    $db = mysqli_fetch_assoc($result);
+    echo "<br><br>";
+    //print_r($db);
+
+    echo "<br><br>";
+
+    $rows = array_keys($db);
+    // echo "<table>";
+    // echo "<tr>";
+    // foreach ($rows as $row){
+    //     echo "<th>$row</th>";
+    // }
+    // foreach ($db as $entry){
+    //     echo "<tr> <td> $entry </td> </tr>";
+    // }
+    // echo "</tr>";
+    // echo "</table>";
+
     display_data($result);
     
     ?>
