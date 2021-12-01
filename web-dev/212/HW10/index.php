@@ -9,14 +9,14 @@
     table,
     th,
     td {
-      border: 1px solid black;
+        border: 1px solid black;
     }
-  </style>
+</style>
 
 <body>
-<?php
-    
-    echo "<h1> " . date("l") . "'s Open Stations </h1>";
+    <?php
+
+    echo "<h1> HW10 - Add and Delete sessions </h1>";
 
     $day_num = array(
         'Sunday' => 1,
@@ -29,71 +29,163 @@
     );
 
     $today_num = $day_num[date("l")];
-    
 
-    function display_data($data) {
+
+    function display_data($data)
+    {
+        echo "<h2> " . date("l") . "'s Open Stations </h2>";
+
         $time = date("Hi");
         $output = "<table>";
-    
-        foreach($data as $key => $var) {
+
+        foreach ($data as $key => $var) {
             //$output .= '<tr>';
-            if ($time > $var['begintime'] && $time < $var['endtime']){
-                if($key===0) {
+            if ($time > $var['begintime'] && $time < $var['endtime']) {
+                if ($key === 0) {
                     $output .= '<tr>';
-                    foreach($var as $col => $val) {
+                    foreach ($var as $col => $val) {
                         $output .= "<td><mark><strong>" . $col . '</strong></mark></td>';
                     }
                     $output .= '</tr>';
-                    foreach($var as $col => $val) {
+                    foreach ($var as $col => $val) {
                         $output .= '<td><mark><strong>' . $val . '</strong></mark></td>';
                     }
+                    $output .= "<td> <form method=\"post\" action =\"\">
+                    <button name = \"Delete\" type=\"submit\" value=" . $var["sessnum"]  . ">Delete</button>
+                  </form> </td>";
                     $output .= '</tr>';
-                }
-                else {
+                } else {
                     $output .= '<tr>';
-                    foreach($var as $col => $val) {
+                    foreach ($var as $col => $val) {
                         $output .= '<td><mark><strong>' . $val . '</strong></mark></td>';
                     }
+                    $output .= "<td> <form method=\"post\" action =\"\">
+                    <button name = \"Delete\" type=\"submit\" value=" . $var["sessnum"]  . ">Delete</button>
+                  </form> </td>";
+
                     $output .= '</tr>';
-            
                 }
-            }
-            else{ 
-                if($key===0) {
+            } else {
+                if ($key === 0) {
                     $output .= '<tr>';
-                    foreach($var as $col => $val) {
+                    foreach ($var as $col => $val) {
                         $output .= "<td>" . $col . '</td>';
                     }
                     $output .= '</tr>';
-                    foreach($var as $col => $val) {
+                    foreach ($var as $col => $val) {
                         $output .= '<td>' . $val . '</td>';
                     }
+                    $output .= "<td> <form method=\"post\" action =\"\">
+                    <button name = \"Delete\" type=\"submit\" value=" . $var["sessnum"]  . ">Delete</button>
+                  </form> </td>";
                     $output .= '</tr>';
-                }
-                else {
+                } else {
                     $output .= '<tr>';
-                    foreach($var as $col => $val) {
+                    foreach ($var as $col => $val) {
                         $output .= '<td>' . $val . '</td>';
                     }
+
+                    $output .= "<td> <form method=\"post\" action =\"\">
+                    <button name = \"Delete\" type=\"submit\" value=" . $var["sessnum"]  . ">Delete</button>
+                  </form> </td>";
                     $output .= '</tr>';
                 }
             }
-            
-        
         }
         $output .= '</table>';
         echo $output;
     }
 
 
-    $conn = mysqli_connect("localhost", "andrewhansbury", "m99c.xent", 
-    "andrewhansbury_HW10") or die("Couldn't Open Database!");
+
+    function display_form()
+    {
+        echo "
+        <br>
+
+        <h3> Add a Session </h3>
+
+        <form action = \"\" method = \"post\">
+    <label for=\"sessnum\">sessnum:</label>
+    <input type=\"text\" id=\"sessnum\" name=\"sessnum\">
+    <br>
+    <label for=\"location\">location:</label>
+    <input type=\"text\" id=\"location\" name=\"location\">
+    <br>
+    <label for=\"dayofweek\">dayofweek:</label>
+    <input type=\"text\" id=\"dayofweek\" name=\"dayofweek\">
+    <br>
+    <label for=\"begintime\">begintime:</label>
+    <input type=\"text\" id=\"begintime\" name=\"begintime\">
+    <br>
+    <label for=\"endtime\">endtime:</label>
+    <input type=\"text\" id=\"endtime\" name=\"endtime\">
+    <br>
+    <label for=\"l-name\">l-name:</label>
+    <input type=\"text\" id=\"l-name\" name=\"lname\">
+    <br>
+    <label for=\"latitude\">latitude:</label>
+    <input type=\"text\" id=\"latitude\" name=\"latitude\" value = 0>
+    <br>
+    <label for=\"longitude\">longitude:</label>
+    <input type=\"text\" id=\"longitude\" name=\"longitude\" value = 0>
+    <br>
+    <br>
+
+    <input type=\"submit\" value=\"Add Session\">
+    </form>
+
+    <br>
+    
+    ";
+    }
+
+
+    echo print_r($_POST);
+
+
+    $conn = mysqli_connect(
+        "localhost",
+        "andrewhansbury",
+        "m99c.xent",
+        "andrewhansbury_HW10"
+    ) or die("Couldn't Open Database!");
     $sql = "select * from session INNER JOIN location on session.location 
     = location.location WHERE `dayofweek` = $today_num";
     $result = mysqli_query($conn, $sql);
-    
+
     display_data($result);
-    
+
+    display_form();
+
+
+    if (isset($_POST['lname'])) {
+
+        #$sql1 = "INSERT INTO `location` (`location`,`l-name`,`latitude`,`longitude`) VALUES ($_POST[location], \"$_POST[lname]\", $_POST[latitude], $_POST[longitude])";
+        $sql2 = "INSERT INTO `session` (`sessnum`,`location`,`dayofweek`,`begintime`, `endtime`) VALUES ($_POST[sessnum], $_POST[location], $_POST[dayofweek], $_POST[begintime], $_POST[endtime])";
+
+        if (mysqli_query($conn, $sql2)) { #&& mysqli_query($conn, $sql2)) {
+            echo "New record created successfully (refresh to see results in table)";
+        } else {
+            echo "<p style = \"color:red;\"><strong>Error: " .  mysqli_error($conn) . "</strong></p>";
+        }
+        // echo "<br>";
+        // echo $sql1;
+        // echo "<br>";
+        // echo $sql2;
+    }
+
+    if (isset($_POST['Delete'])) {
+        $sessnum = $_POST['Delete'];
+        $sql3 = "DELETE FROM `session` WHERE `sessnum` = $sessnum";
+        if (mysqli_query($conn, $sql3)) {
+            echo "Record deleted successfully (refresh to see results in table)";
+            #echo $sql3;
+        } else {
+            echo "<p style = \"color:red;\"><strong>Error: " .  mysqli_error($conn) . "</strong></p>";
+        }
+    }
+
     ?>
 
 
