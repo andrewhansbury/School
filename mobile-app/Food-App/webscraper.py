@@ -5,12 +5,8 @@ import mysql.connector
 driver = webdriver.Chrome()
 driver.get("https://www.southern.edu/administration/food/index.html")
 
-days = []
-
-
 titles = driver.find_elements_by_xpath(
     "/html/body/div[2]/div/div/main/div[2]/div/div/div")
-
 x = 0
 for title in titles:
     print(f"{x}: ", title)
