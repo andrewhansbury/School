@@ -13,7 +13,7 @@ struct Food: Identifiable, Decodable {
     var Breakfast: String
     var Lunch: String
     var Dinner: String
-    var id: Int
+    var id: String{Day}
 }
 
 
@@ -22,9 +22,9 @@ class Network: ObservableObject {
     
     func dataHandler() {
         
-        let url = URL(string: "http://127.0.0.1:8000/")!
+        let url = URL(string: "https://menujson.000webhostapp.com/")!
         
-        print("bitch")
+        print("")
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         
@@ -45,7 +45,7 @@ class Network: ObservableObject {
                         let decode = try JSONDecoder().decode([Food].self, from: data)
                         self.d = decode
                     } catch let error {
-                        print("fuck", error)
+                        print("Ouchy", error)
                     }
                 }
             }
@@ -69,6 +69,8 @@ struct ContentView: View {
         List{
             ForEach(network.d) { item in
                 Text(item.Breakfast)
+                Text(item.Lunch)
+                Text(item.Dinner)
             }
         }
         .onAppear(perform: {
