@@ -40,8 +40,7 @@ days_meals = driver.find_elements_by_xpath(
 
 for day in days_meals:
     text = day.text
-
-    # print(test.text)
+    print(text)
     print("*"*60)
 
 # print(test.text)
