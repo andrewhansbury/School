@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>HW13</title>
+  </head>
+  <style>
+    td {
+      width: 25%;
+      font-size: 30px;
+      text-align: center;
+      background-color: red;
+    }
+  </style>
+
+  <body onload="displayboard();">
+    <script>
+      const board = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+      function play() {
+        alert("hi");
+        document.write("<td background-color: blue>");
+      }
+
+      function displayboard() {
+        document.write("<h1>HW13 - Javascript Tricks</h1>");
+        document.write("yo");
+        var boardtext = "";
+        boardtext += "<br/> <table border =2>";
+        for (var row = 1; row < 5; row++) {
+          boardtext += "<tr>";
+          for (var col = 1; col < 5; col++) {
+            boardtext += "<td onclick ='play'>&nbsp" + row * col + " </td>";
+          }
+          boardtext += "</tr>";
+        }
+        boardtext += "</table>";
+        document.getElementById("board").innerHTML = boardtext;
+      }
+    </script>
+  </body>
+  <span id="board"><br><table border="3"><tbody><tr><td><table border="1"><tbody><tr><td width="15" onclick="play(0)" ;="">&nbsp;</td><td width="15" onclick="play(1)" ;="">&nbsp;</td><td width="15" onclick="play(2)" ;="">&nbsp;</td></tr><tr><td width="15" onclick="play(9)" ;="">&nbsp;</td><td width="15" onclick="play(10)" ;=""><b>5</b></td><td width="15" onclick="play(11)" ;="">&nbsp;</td></tr><tr><td width="15" onclick="play(18)" ;=""><b>7</b></td><td width="15" onclick="play(19)" ;=""><b>6</b></td><td width="15" onclick="play(20)" ;=""><b>8</b></td></tr></tbody></table></td><td><table border="1"><tbody><tr><td width="15" onclick="play(3)" ;=""><b>2</b></td><td width="15" onclick="play(4)" ;="">&nbsp;</td><td width="15" onclick="play(5)" ;=""><b>7</b></td></tr><tr><td width="15" onclick="play(12)" ;="">&nbsp;</td><td width="15" onclick="play(13)" ;=""><b>3</b></td><td width="15" onclick="play(14)" ;="">&nbsp;</td></tr><tr><td width="15" onclick="play(21)" ;="">&nbsp;</td><td width="15" onclick="play(22)" ;=""><b>1</b></td><td width="15" onclick="play(23)" ;="">&nbsp;</td></tr></tbody></table></td><td><table border="1"><tbody><tr><td width="15" onclick="play(6)" ;="">&nbsp;</td><td width="15" onclick="play(7)" ;="">&nbsp;</td><td width="15" onclick="play(8)" ;="">&nbsp;</td></tr><tr><td width="15" onclick="play(15)" ;=""><b>7</b></td><td width="15" onclick="play(16)" ;=""><b>4</b></td><td width="15" onclick="play(17)" ;="">&nbsp;</td></tr><tr><td width="15" onclick="play(24)" ;="">&nbsp;</td><td width="15" onclick="play(25)" ;=""><b>2</b></td><td width="15" onclick="play(26)" ;="">&nbsp;</td></tr></tbody></table></td></tr><tr><td><table border="1"><tbody><tr><td width="15" onclick="play(27)" ;="">&nbsp;</td><td width="15" onclick="play(28)" ;=""><b>9</b></td><td width="15" onclick="play(29)" ;=""><b>4</b></td></tr><tr><td width="15" onclick="play(36)" ;=""><b>2</b></td><td width="15" onclick="play(37)" ;=""><b>8</b></td><td width="15" onclick="play(38)" ;="">&nbsp;</td></tr><tr><td width="15" onclick="play(45)" ;="">&nbsp;</td><td width="15" onclick="play(46)" ;=""><b>7</b></td><td width="15" onclick="play(47)" ;=""><b>5</b></td></tr></tbody></table></td><td><table border="1"><tbody><tr><td width="15" onclick="play(30)" ;="">&nbsp;</td><td width="15" onclick="play(31)" ;="">&nbsp;</td><td width="15" onclick="play(32)" ;=""><b>2</b></td></tr><tr><td width="15" onclick="play(39)" ;="">&nbsp;</td><td width="15" onclick="play(40)" ;="">&nbsp;</td><td width="15" onclick="play(41)" ;="">&nbsp;</td></tr><tr><td width="15" onclick="play(48)" ;=""><b>1</b></td><td width="15" onclick="play(49)" ;="">&nbsp;</td><td width="15" onclick="play(50)" ;="">&nbsp;</td></tr></tbody></table></td><td><table border="1"><tbody><tr><td width="15" onclick="play(33)" ;=""><b>1</b></td><td width="15" onclick="play(34)" ;=""><b>6</b></td><td width="15" onclick="play(35)" ;="">&nbsp;</td></tr><tr><td width="15" onclick="play(42)" ;="">&nbsp;</td><td width="15" onclick="play(43)" ;=""><b>5</b></td><td width="15" onclick="play(44)" ;=""><b>9</b></td></tr><tr><td width="15" onclick="play(51)" ;=""><b>2</b></td><td width="15" onclick="play(52)" ;=""><b>3</b></td><td width="15" onclick="play(53)" ;="">&nbsp;</td></tr></tbody></table></td></tr><tr><td><table border="1"><tbody><tr><td width="15" onclick="play(54)" ;="">&nbsp;</td><td width="15" onclick="play(55)" ;=""><b>4</b></td><td width="15" onclick="play(56)" ;="">&nbsp;</td></tr><tr><td width="15" onclick="play(63)" ;="">&nbsp;</td><td width="15" onclick="play(64)" ;=""><b>2</b></td><td width="15" onclick="play(65)" ;=""><b>6</b></td></tr><tr><td width="15" onclick="play(72)" ;="">&nbsp;</td><td width="15" onclick="play(73)" ;="">&nbsp;</td><td width="15" onclick="play(74)" ;="">&nbsp;</td></tr></tbody></table></td><td><table border="1"><tbody><tr><td width="15" onclick="play(57)" ;="">&nbsp;</td><td width="15" onclick="play(58)" ;=""><b>8</b></td><td width="15" onclick="play(59)" ;="">&nbsp;</td></tr><tr><td width="15" onclick="play(66)" ;="">&nbsp;</td><td width="15" onclick="play(67)" ;=""><b>7</b></td><td width="15" onclick="play(68)" ;="">&nbsp;</td></tr><tr><td width="15" onclick="play(75)" ;=""><b>5</b></td><td width="15" onclick="play(76)" ;="">&nbsp;</td><td width="15" onclick="play(77)" ;=""><b>6</b></td></tr></tbody></table></td><td><table border="1"><tbody><tr><td width="15" onclick="play(60)" ;=""><b>6</b></td><td width="15" onclick="play(61)" ;=""><b>7</b></td><td width="15" onclick="play(62)" ;=""><b>2</b></td></tr><tr><td width="15" onclick="play(69)" ;="">&nbsp;</td><td width="15" onclick="play(70)" ;=""><b>1</b></td><td width="15" onclick="play(71)" ;="">&nbsp;</td></tr><tr><td width="15" onclick="play(78)" ;="">&nbsp;</td><td width="15" onclick="play(79)" ;="">&nbsp;</td><td width="15" onclick="play(80)" ;="">&nbsp;</td></tr></tbody></table></td></tr></tbody></table></span>
+</body>
+</html>
