@@ -22,6 +22,7 @@
 
 
 <?php
+
 function convertHex($number, $base)
 {
 
@@ -87,38 +88,37 @@ function printTable($color, $base)
 
 ?>
 
-
-
 <body>
-    <h1>HW14 - Multiplication Table [Revisited!]</h1>
+    <h1>HW14 - Multiplication Table [REVISED!]</h1>
 
     <?php
-    $colors = ["White", "Lightblue", "Yellow", "Coral", "Lightgreen"];
-    ?>
+    if (isset($_COOKIE["color"])) {
+        $colors = ["White", "Lightblue", "Yellow", "Coral", "Lightgreen"];
 
-    <form method="POST" action="index.php">
-        <label for=colors> Select your background: Background: </label>
-        <select name="color">
 
-            <?php
+        echo "<form method=\"POST\" action=\"index.php\">";
+        echo "<label for=colors> Select your background: Background: </label>";
+        echo "    <select name=\"color\">";
 
-            for ($i = 0; $i < count($colors); $i++) {
-                if ($_POST['color'] != $colors[$i]) {
-                    echo "<option value = $colors[$i]> $colors[$i] </option>";
-                    echo "selected";
-                } else {
-                    echo "<option value = $colors[$i] selected> $colors[$i]   </option>";
-                }
+
+
+        for ($i = 0; $i < count($colors); $i++) {
+            if ($_POST['color'] != $colors[$i]) {
+                echo "<option value = $colors[$i]> $colors[$i] </option>";
+                echo "selected";
+            } else {
+                echo "<option value = $colors[$i] selected> $colors[$i]   </option>";
             }
-            ?>
-        </select>
+        }
 
-        <br>
+        echo "</select>";
 
-        <p>Select the number base:</p>
+        echo "<br>";
+
+        echo "<p>Select the number base:</p>";
 
 
-        <?php
+
         //All the buttons
         for ($i = 2; $i < 17; $i++) {
             echo "
@@ -129,6 +129,60 @@ function printTable($color, $base)
 
 
         if (isset($_POST['color'])) {
+            //delete cookies
+            unset($_COOKIE["color"]);
+            unset($_COOKIE["base"]);
+            //set cookies
+            setcookie("color", $_POST["color"], time() + (86400 * 15));
+            setcookie("base", $_POST["num"], time() + (86400 * 15));
+            $background = $_POST['color'];
+            $base_val = $_POST['num'];
+            echo "<h1> Base " . $base_val . "</h1> <br>";
+            printTable($background, $base_val);
+        } else {
+            echo "<h1> Base " . $_COOKIE["base"] . "</h1> <br>";
+            printTable($_COOKIE["color"], $_COOKIE["base"]);
+        }
+    }
+    //else
+    else {
+        $colors = ["White", "Lightblue", "Yellow", "Coral", "Lightgreen"];
+
+
+        echo "<form method=\"POST\" action=\"index.php\">";
+        echo "<label for=colors> Select your background: Background: </label>";
+        echo "    <select name=\"color\">";
+
+
+
+        for ($i = 0; $i < count($colors); $i++) {
+            if ($_POST['color'] != $colors[$i]) {
+                echo "<option value = $colors[$i]> $colors[$i] </option>";
+                echo "selected";
+            } else {
+                echo "<option value = $colors[$i] selected> $colors[$i]   </option>";
+            }
+        }
+
+        echo "</select>";
+
+        echo "<br>";
+
+        echo "<p>Select the number base:</p>";
+
+
+
+        //All the buttons
+        for ($i = 2; $i < 17; $i++) {
+            echo "
+        <input type=submit value = $i name = num>
+        ";
+        }
+        echo "</form>";
+
+        if (isset($_POST['color'])) {
+            setcookie("color", $_POST["color"], time() + (86400 * 15));
+            setcookie("base", $_POST["num"], time() + (86400 * 15));
             $background = $_POST['color'];
             $base_val = $_POST['num'];
             echo "<h1> Base " . $base_val . "</h1> <br>";
@@ -137,7 +191,11 @@ function printTable($color, $base)
             $background = "lightblue";
             $base_val = 10;
         }
-        ?>
+    }
+
+
+    ?>
+
 
 
 </body>
