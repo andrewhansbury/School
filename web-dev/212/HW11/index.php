@@ -55,7 +55,7 @@
                   </form> </td>";
 
                     $output .= "<td> <form method=\"post\" action =\"\">
-                    <button name = \"Edit\" type=\"submit\" value=" . $var["sessnum"]  . ">Edit</button>
+                    <button name = \"Edit\" type=\"submit\" form=\"form1\" value=" . $var["sessnum"]  . ">Edit</button>
                   </form> </td>";
                     $output .= '</tr>';
                 } else {
@@ -68,7 +68,7 @@
                   </form> </td>";
 
                     $output .= "<td> <form method=\"post\" action =\"\">
-                    <button name = \"Edit\" type=\"submit\" value=" . $var["sessnum"]  . ">Edit</button>
+                    <button name = \"Edit\" type=\"submit\" form=\"form1\" value=" . $var["sessnum"]  . ">Edit</button>
                   </form> </td>";
 
                     $output .= '</tr>';
@@ -88,7 +88,7 @@
                   </form> </td>";
 
                     $output .= "<td> <form method=\"post\" action =\"\">
-                    <button name = \"Edit\" type=\"submit\" value=" . $var["sessnum"]  . ">Edit</button>
+                    <button name = \"Edit\" type=\"submit\" form=\"form1\" value=" . $var["sessnum"]  . ">Edit</button>
                   </form> </td>";
                     $output .= '</tr>';
                 } else {
@@ -114,47 +114,11 @@
     }
 
 
-
-    function display_add_form()
-    {
-        echo "
-        <br>
-
-        <h3> Add a Session </h3>
-
-        <form action = \"\" method = \"post\">
-    <label for=\"sessnum\">sessnum:</label>
-    <input type=\"text\" id=\"sessnum\" name=\"sessnum\">
-    <br>
-    <label for=\"location\">location:</label>
-    <input type=\"text\" id=\"location\" name=\"location\">
-    <br>
-    <label for=\"dayofweek\">dayofweek:</label>
-    <input type=\"text\" id=\"dayofweek\" name=\"dayofweek\">
-    <br>
-    <label for=\"begintime\">begintime:</label>
-    <input type=\"text\" id=\"begintime\" name=\"begintime\">
-    <br>
-    <label for=\"endtime\">endtime:</label>
-    <input type=\"text\" id=\"endtime\" name=\"endtime\">
-    <br>
-    
-
-   
-
-    <input type=\"submit\" value=\"Add Session\">
-    </form>
-
-    <br>
-    
-    ";
-    }
-
     function display_edit_form()
     {
         echo "<h3> Edit a Session </h3>";
 
-        echo "<form action=\"\" method =\"POST\" id=\"form1\">
+        echo "<form action=\"\" method =\"post\" id=\"form1\">
         
         <label for=\"newbegin\">New begintime:</label>
         <input type=\"text\" id=\"newbegin\" name=\"newbegin\">
@@ -165,6 +129,91 @@
     
         </form>";
     }
+
+
+
+    function display_add_form()
+    {
+        $conn = mysqli_connect(
+            "localhost",
+            "andrewhansbury",
+            "m99c.xent",
+            "andrewhansbury_HW10"
+        ) or die("Couldn't Open Database!");
+        echo "
+        <br>
+
+        <h3> Add a Session </h3>
+
+        <form action = \"\" method = \"post\">
+        ";
+        // <label for=\"sessnum\">sessnum:</label>
+        // <input type=\"text\" id=\"sessnum\" name=\"sessnum\">
+        // <br>
+
+
+        echo "
+    <label for=\"location\">location:</label>
+    
+    <select name=\"location\" id=\"location\">";
+
+        $sql = "SELECT `location` FROM `location` WHERE 1";
+        $result = mysqli_query($conn, $sql);
+
+        while ($row = $result->fetch_assoc()) {
+            echo "<option value=" . $row['location'] . ">" . $row['location'] . "</option>";
+        }
+        echo "</select>
+    <br>
+
+
+    <label for=\"dayofweek\">dayofweek:</label>
+    <select name=\"dayofweek\" id=\"dayofweek\">";
+
+        $sql = "SELECT DISTINCT `dayofweek` FROM `session` WHERE 1";
+        $result = mysqli_query($conn, $sql);
+
+        while ($row = $result->fetch_assoc()) {
+            echo "<option value=" . $row['dayofweek'] . ">" . $row['dayofweek'] . "</option>";
+        }
+        echo "</select>
+    <br>
+    <label for=\"begintime\">begintime:</label>
+    <input type=\"text\" id=\"begintime\" name=\"begintime\">
+    <br>
+    <label for=\"endtime\">endtime:</label>
+    <input type=\"text\" id=\"endtime\" name=\"endtime\">
+    <br>
+    ";
+        // <label for=\"l-name\">l-name:</label>
+        // <select name=\"l-name\" id=\"l-name\">";
+
+        //     $sql = "SELECT DISTINCT `l-name` FROM `location` WHERE 1";
+        //     $result = mysqli_query($conn, $sql);
+
+        //     while ($row = $result->fetch_assoc()) {
+        //         echo "<option value=" . space_remove($row['l-name']) . ">" . $row['l-name'] . "</option>";
+        //     }
+        //     echo "</select>
+
+        echo "
+    <label for=\"latitude\">latitude:</label>
+    <input type=\"text\" id=\"latitude\" name=\"latitude\" value = 0>
+    <br>
+    <label for=\"longitude\">longitude:</label>
+    <input type=\"text\" id=\"longitude\" name=\"longitude\" value = 0>
+    <br>
+    <br>
+
+    <input type=\"submit\" value=\"Add Session\">
+    </form>
+
+    <br>
+    
+    ";
+    }
+
+
 
 
     echo print_r($_POST);
@@ -187,10 +236,18 @@
     display_add_form();
 
 
-    if (isset($_POST['sessnum'])) {
+    if (isset($_POST['dayofweek'])) {
+
+        $result = mysqli_query($conn, "SELECT MAX(`sessnum`) FROM `session`");
+        $row = mysqli_fetch_assoc($result);
+        print_r($row);
+        $session = $row['MAX(`sessnum`)'];
+        echo $session;
+
+
 
         #$sql1 = "INSERT INTO `location` (`location`,`l-name`,`latitude`,`longitude`) VALUES ($_POST[location], \"$_POST[lname]\", $_POST[latitude], $_POST[longitude])";
-        $sql2 = "INSERT INTO `session` (`sessnum`,`location`,`dayofweek`,`begintime`, `endtime`) VALUES ($_POST[sessnum], $_POST[location], $_POST[dayofweek], $_POST[begintime], $_POST[endtime])";
+        $sql2 = "INSERT INTO `session` (`sessnum`,`location`,`dayofweek`,`begintime`, `endtime`) VALUES ($session+1, $_POST[location], $_POST[dayofweek], $_POST[begintime], $_POST[endtime])";
 
         if (mysqli_query($conn, $sql2)) { #&& mysqli_query($conn, $sql2)) {
             echo "New record created successfully (refresh to see results in table)";
