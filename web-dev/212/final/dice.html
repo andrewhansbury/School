@@ -1,0 +1,55 @@
+<!-- saved from url=(0084)http://computing.southern.edu/jbeckett/cptr212f21/Repository/20211201/Dice/dice.html -->
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+    <title>Roll the Dice</title>
+    <script>
+      var die1Val;
+      var die2Val;
+      function showdice() {
+        die1Val = Math.floor(Math.random() * 8) + 1;
+        var url1 = "dice" + die1Val + ".jpg";
+        document.getElementById("die1").src = url1;
+        die2Val = Math.floor(Math.random() * 8) + 1;
+        var url2 = "dice" + die2Val + ".jpg";
+        document.getElementById("die2").src = url2;
+        document.getElementById("total").innerHTML = die1Val + die2Val;
+        if (die1Val + die2Val == 7) {
+          document.body.style.backgroundColor = "blue";
+        } else {
+          document.body.style.backgroundColor = "white";
+        }
+
+        if (die1Val + die2Val == 8) {
+          document.getElementById("roll_button").outerHTML =
+            ' <input type="button" id="roll_button" onclick="showdice();" value="Roll"/>Frozen';
+
+          document.getElementById("roll_button").disabled = true;
+
+          //document.getElementById("roll_button").innerHTML = "Frozen";
+        }
+      }
+    </script>
+  </head>
+  <body
+    onload="showdice();"
+    data-new-gr-c-s-check-loaded="14.1042.0"
+    data-gr-ext-installed=""
+  >
+    <input
+      type="button"
+      id="roll_button"
+      onclick="showdice();"
+      value="Roll"
+    /><br /><br />
+    <img id="die1" width="100" src="./dice_files/dice5.jpg" />&nbsp;<img
+      id="die2"
+      width="100"
+      src="./dice_files/dice4.jpg"
+    />
+    <h1 id="total">9</h1>
+  </body>
+  <grammarly-desktop-integration
+    data-grammarly-shadow-root="true"
+  ></grammarly-desktop-integration>
+</html>
