@@ -1,0 +1,88 @@
+.Mercury {
+  position: absolute;
+  left: 0px;
+  top: 100px;
+  z-index: 1;
+}
+
+.Venus {
+  position: absolute;
+  left: 75px;
+  top: 130px;
+  z-index: 2;
+}
+
+.Earth {
+  border-width: thick;
+  border-style: inset;
+  border-color: blue;
+  position: absolute;
+  left: 150px;
+  top: 160px;
+  z-index: 5;
+}
+
+.Mars {
+  position: absolute;
+  left: 225px;
+  top: 190px;
+  z-index: 4;
+}
+
+.Jupiter {
+  position: absolute;
+  left: 300px;
+  top: 220px;
+  z-index: 5;
+}
+.Saturn {
+  position: absolute;
+  left: 375px;
+  top: 250px;
+  z-index: 6;
+}
+
+.Uranus {
+  position: absolute;
+  left: 450px;
+  top: 280px;
+  z-index: 7;
+}
+.Neptune {
+  position: absolute;
+  left: 525px;
+  top: 310px;
+  z-index: 8;
+}
+
+.Pluto {
+  border-width: thin;
+  border-style: dashed;
+  border-color: red;
+  position: absolute;
+  left: 600px;
+  top: 340px;
+  z-index: 7;
+}
+.endofpage {
+  position: fixed;
+  bottom: 0;
+  left: 20px;
+  top: 450px;
+  width: 660px;
+  height: 150px;
+  border-width: 10px;
+  border-style: outset;
+  border-color: red;
+  /* column-width: 100px; */
+}
+#column1 {
+  float: left;
+  width: 45%;
+  color: green;
+}
+#column2 {
+  float: right;
+  width: 50%;
+  color: blue;
+}
