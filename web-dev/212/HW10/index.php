@@ -96,24 +96,64 @@
         echo $output;
     }
 
+    function space_remove($str)
+    {
+        if (strpos($str, ' ') !== false) {
+            return str_replace(' ', '_', $str);
+        }
+    }
+
+    function space_adder($str)
+    {
+    }
+
 
 
     function display_form()
     {
+        $conn = mysqli_connect(
+            "localhost",
+            "andrewhansbury",
+            "m99c.xent",
+            "andrewhansbury_HW10"
+        ) or die("Couldn't Open Database!");
         echo "
         <br>
 
         <h3> Add a Session </h3>
 
         <form action = \"\" method = \"post\">
-    <label for=\"sessnum\">sessnum:</label>
-    <input type=\"text\" id=\"sessnum\" name=\"sessnum\">
-    <br>
+        ";
+        // <label for=\"sessnum\">sessnum:</label>
+        // <input type=\"text\" id=\"sessnum\" name=\"sessnum\">
+        // <br>
+
+
+        echo "
     <label for=\"location\">location:</label>
-    <input type=\"text\" id=\"location\" name=\"location\">
+    
+    <select name=\"location\" id=\"location\">";
+
+        $sql = "SELECT `location` FROM `location` WHERE 1";
+        $result = mysqli_query($conn, $sql);
+
+        while ($row = $result->fetch_assoc()) {
+            echo "<option value=" . $row['location'] . ">" . $row['location'] . "</option>";
+        }
+        echo "</select>
     <br>
+
+
     <label for=\"dayofweek\">dayofweek:</label>
-    <input type=\"text\" id=\"dayofweek\" name=\"dayofweek\">
+    <select name=\"dayofweek\" id=\"dayofweek\">";
+
+        $sql = "SELECT DISTINCT `dayofweek` FROM `session` WHERE 1";
+        $result = mysqli_query($conn, $sql);
+
+        while ($row = $result->fetch_assoc()) {
+            echo "<option value=" . $row['dayofweek'] . ">" . $row['dayofweek'] . "</option>";
+        }
+        echo "</select>
     <br>
     <label for=\"begintime\">begintime:</label>
     <input type=\"text\" id=\"begintime\" name=\"begintime\">
@@ -121,9 +161,19 @@
     <label for=\"endtime\">endtime:</label>
     <input type=\"text\" id=\"endtime\" name=\"endtime\">
     <br>
-    <label for=\"l-name\">l-name:</label>
-    <input type=\"text\" id=\"l-name\" name=\"lname\">
-    <br>
+    ";
+        // <label for=\"l-name\">l-name:</label>
+        // <select name=\"l-name\" id=\"l-name\">";
+
+        //     $sql = "SELECT DISTINCT `l-name` FROM `location` WHERE 1";
+        //     $result = mysqli_query($conn, $sql);
+
+        //     while ($row = $result->fetch_assoc()) {
+        //         echo "<option value=" . space_remove($row['l-name']) . ">" . $row['l-name'] . "</option>";
+        //     }
+        //     echo "</select>
+
+        echo "
     <label for=\"latitude\">latitude:</label>
     <input type=\"text\" id=\"latitude\" name=\"latitude\" value = 0>
     <br>
@@ -152,6 +202,7 @@
     ) or die("Couldn't Open Database!");
     $sql = "select * from session INNER JOIN location on session.location 
     = location.location WHERE `dayofweek` = $today_num";
+
     $result = mysqli_query($conn, $sql);
 
     display_data($result);
@@ -159,10 +210,20 @@
     display_form();
 
 
-    if (isset($_POST['lname'])) {
+
+    if (isset($_POST['dayofweek'])) {
+
+
+        $result = mysqli_query($conn, "SELECT MAX(`sessnum`) FROM `session`");
+        $row = mysqli_fetch_assoc($result);
+        print_r($row);
+        $session = $row['MAX(`sessnum`)'];
+        echo $session;
+
+
 
         #$sql1 = "INSERT INTO `location` (`location`,`l-name`,`latitude`,`longitude`) VALUES ($_POST[location], \"$_POST[lname]\", $_POST[latitude], $_POST[longitude])";
-        $sql2 = "INSERT INTO `session` (`sessnum`,`location`,`dayofweek`,`begintime`, `endtime`) VALUES ($_POST[sessnum], $_POST[location], $_POST[dayofweek], $_POST[begintime], $_POST[endtime])";
+        $sql2 = "INSERT INTO `session` (`sessnum`,`location`,`dayofweek`,`begintime`, `endtime`) VALUES ($session+1, $_POST[location], $_POST[dayofweek], $_POST[begintime], $_POST[endtime])";
 
         if (mysqli_query($conn, $sql2)) { #&& mysqli_query($conn, $sql2)) {
             echo "New record created successfully (refresh to see results in table)";
