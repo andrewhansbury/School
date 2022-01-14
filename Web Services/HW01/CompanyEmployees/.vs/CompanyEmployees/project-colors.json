@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "36257ba7-3398-4b24-a893-a494b64f40db": {
+      "ProjectGuid": "36257ba7-3398-4b24-a893-a494b64f40db",
+      "DisplayName": "CompanyEmployees",
+      "ColorIndex": 0
+    },
+    "d17c674a-ba39-4722-b992-baa9bbe81bc2": {
+      "ProjectGuid": "d17c674a-ba39-4722-b992-baa9bbe81bc2",
+      "DisplayName": "Contracts",
+      "ColorIndex": 1
+    },
+    "8f24a736-663a-4667-a3be-0aeaa998a0dd": {
+      "ProjectGuid": "8f24a736-663a-4667-a3be-0aeaa998a0dd",
+      "DisplayName": "LoggerService",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

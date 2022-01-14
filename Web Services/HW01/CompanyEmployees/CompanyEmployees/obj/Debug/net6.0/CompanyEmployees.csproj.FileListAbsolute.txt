@@ -20,3 +20,11 @@ C:\Code\School\Web Services\HW01\CompanyEmployees\CompanyEmployees\obj\Debug\net
 C:\Code\School\Web Services\HW01\CompanyEmployees\CompanyEmployees\obj\Debug\net6.0\CompanyEmployees.pdb
 C:\Code\School\Web Services\HW01\CompanyEmployees\CompanyEmployees\obj\Debug\net6.0\CompanyEmployees.genruntimeconfig.cache
 C:\Code\School\Web Services\HW01\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\appsettings.Production.json
+C:\Code\School\Web Services\HW01\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\nlog.config
+C:\Code\School\Web Services\HW01\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\NLog.dll
+C:\Code\School\Web Services\HW01\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+C:\Code\School\Web Services\HW01\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\Contracts.dll
+C:\Code\School\Web Services\HW01\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\LoggerService.dll
+C:\Code\School\Web Services\HW01\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\LoggerService.pdb
+C:\Code\School\Web Services\HW01\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\Contracts.pdb
+C:\Code\School\Web Services\HW01\CompanyEmployees\CompanyEmployees\obj\Debug\net6.0\CompanyEmployees.csproj.CopyComplete
