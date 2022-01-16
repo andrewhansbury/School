@@ -13,3 +13,5 @@ C:\Code\School\Web Services\HW01\CompanyEmployees\Repository\obj\Debug\net6.0\Re
 C:\Code\School\Web Services\HW01\CompanyEmployees\Repository\obj\Debug\net6.0\Repository.dll
 C:\Code\School\Web Services\HW01\CompanyEmployees\Repository\obj\Debug\net6.0\ref\Repository.dll
 C:\Code\School\Web Services\HW01\CompanyEmployees\Repository\obj\Debug\net6.0\Repository.pdb
+C:\Code\School\Web Services\HW01\CompanyEmployees\Repository\bin\Debug\net6.0\Contracts.dll
+C:\Code\School\Web Services\HW01\CompanyEmployees\Repository\bin\Debug\net6.0\Contracts.pdb
