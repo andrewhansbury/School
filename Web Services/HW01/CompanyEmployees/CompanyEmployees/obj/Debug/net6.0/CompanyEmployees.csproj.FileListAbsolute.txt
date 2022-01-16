@@ -65,3 +65,7 @@ C:\Code\School\Web Services\HW01\CompanyEmployees\CompanyEmployees\bin\Debug\net
 C:\Code\School\Web Services\HW01\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\Repository.dll
 C:\Code\School\Web Services\HW01\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\Repository.pdb
 C:\Code\School\Web Services\HW01\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\Entities.pdb
+C:\Code\School\Web Services\HW01\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\Service.Contracts.dll
+C:\Code\School\Web Services\HW01\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\Service.dll
+C:\Code\School\Web Services\HW01\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\Service.pdb
+C:\Code\School\Web Services\HW01\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\Service.Contracts.pdb

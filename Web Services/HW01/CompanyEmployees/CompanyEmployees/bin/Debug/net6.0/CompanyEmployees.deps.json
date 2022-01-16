@@ -12,7 +12,8 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.1",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.1",
           "NLog.Extensions.Logging": "1.7.4",
-          "Repository": "1.0.0"
+          "Repository": "1.0.0",
+          "Service": "1.0.0"
         },
         "runtime": {
           "CompanyEmployees.dll": {}
@@ -478,6 +479,20 @@
         "runtime": {
           "Repository.dll": {}
         }
+      },
+      "Service/1.0.0": {
+        "dependencies": {
+          "Contracts": "1.0.0",
+          "Service.Contracts": "1.0.0"
+        },
+        "runtime": {
+          "Service.dll": {}
+        }
+      },
+      "Service.Contracts/1.0.0": {
+        "runtime": {
+          "Service.Contracts.dll": {}
+        }
       }
     }
   },
@@ -818,6 +833,16 @@
       "sha512": ""
     },
     "Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Service.Contracts/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
