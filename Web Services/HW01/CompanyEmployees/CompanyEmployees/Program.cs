@@ -14,6 +14,7 @@ builder.Services.ConfigureLoggerService();
 
 //done
 builder.Services.ConfigureRepositoryManager();
+builder.Services.ConfigureServiceManager();
 builder.Services.AddControllers();
 
 var app = builder.Build();
