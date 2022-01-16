@@ -1,0 +1,15 @@
+C:\Code\School\Web Services\HW01\CompanyEmployees\Repository\bin\Debug\net6.0\Repository.deps.json
+C:\Code\School\Web Services\HW01\CompanyEmployees\Repository\bin\Debug\net6.0\Repository.dll
+C:\Code\School\Web Services\HW01\CompanyEmployees\Repository\bin\Debug\net6.0\ref\Repository.dll
+C:\Code\School\Web Services\HW01\CompanyEmployees\Repository\bin\Debug\net6.0\Repository.pdb
+C:\Code\School\Web Services\HW01\CompanyEmployees\Repository\bin\Debug\net6.0\Entities.dll
+C:\Code\School\Web Services\HW01\CompanyEmployees\Repository\bin\Debug\net6.0\Entities.pdb
+C:\Code\School\Web Services\HW01\CompanyEmployees\Repository\obj\Debug\net6.0\Repository.csproj.AssemblyReference.cache
+C:\Code\School\Web Services\HW01\CompanyEmployees\Repository\obj\Debug\net6.0\Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Code\School\Web Services\HW01\CompanyEmployees\Repository\obj\Debug\net6.0\Repository.AssemblyInfoInputs.cache
+C:\Code\School\Web Services\HW01\CompanyEmployees\Repository\obj\Debug\net6.0\Repository.AssemblyInfo.cs
+C:\Code\School\Web Services\HW01\CompanyEmployees\Repository\obj\Debug\net6.0\Repository.csproj.CoreCompileInputs.cache
+C:\Code\School\Web Services\HW01\CompanyEmployees\Repository\obj\Debug\net6.0\Repository.csproj.CopyComplete
+C:\Code\School\Web Services\HW01\CompanyEmployees\Repository\obj\Debug\net6.0\Repository.dll
+C:\Code\School\Web Services\HW01\CompanyEmployees\Repository\obj\Debug\net6.0\ref\Repository.dll
+C:\Code\School\Web Services\HW01\CompanyEmployees\Repository\obj\Debug\net6.0\Repository.pdb
