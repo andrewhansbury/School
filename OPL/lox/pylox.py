@@ -2,7 +2,8 @@
 
 from posixpath import split
 import sys
-import os
+
+import scanner
 
 class Lox:
 
