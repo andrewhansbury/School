@@ -1,9 +1,8 @@
 
-
-from posixpath import split
 import sys
+from scanner import Scanner
 
-import scanner
+
 
 class Lox:
 
@@ -42,8 +41,11 @@ class Lox:
         if (self.hadError) :
             exit()
 
-    def run(self, line:str):
-        tokens = line.split()
+    def run(self, source:str):
+        # print(source)
+        scanner = Scanner(source, self)
+        tokens = scanner.scanToken()
+
         
         for token in tokens:
             print(token)
