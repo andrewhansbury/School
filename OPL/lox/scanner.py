@@ -5,7 +5,9 @@ from tokens import Token
 
 # may need to create the ENUMS (tokentype file)
 
-#need to pass Lox otherwise circular dependency
+# need to pass Lox otherwise circular dependency
+
+
 class Scanner:
     def __init__(self, source, Lox):
         self.Lox = Lox
@@ -18,26 +20,24 @@ class Scanner:
 
         self.keywords = {
 
-        "and"    :TokenType.AND ,
-        "class"  :TokenType.CLASS,
-        "else"   :TokenType.ELSE,
-        "false"  :TokenType.FALSE,
-        "for"    :TokenType.FOR ,
-        "fun"    :TokenType.FUN ,
-        "if"     :TokenType.IF  ,
-        "nil"    :TokenType.NIL  ,
-        "or"     :TokenType.OR  ,
-        "print"  :TokenType.PRINT,
-        "return" :TokenType.RETURN,
-        "super"  :TokenType.SUPER,
-        "this"   :TokenType.THIS ,
-        "true"   :TokenType.TRUE ,
-        "var"    :TokenType.VAR  ,
-        "while"  :TokenType.WHILE,
+            "and": TokenType.AND,
+            "class": TokenType.CLASS,
+            "else": TokenType.ELSE,
+            "false": TokenType.FALSE,
+            "for": TokenType.FOR,
+            "fun": TokenType.FUN,
+            "if": TokenType.IF,
+            "nil": TokenType.NIL,
+            "or": TokenType.OR,
+            "print": TokenType.PRINT,
+            "return": TokenType.RETURN,
+            "super": TokenType.SUPER,
+            "this": TokenType.THIS,
+            "true": TokenType.TRUE,
+            "var": TokenType.VAR,
+            "while": TokenType.WHILE,
         }
 
-
- 
     def scanTokens(self) -> 'list[Token]':
         while not self.isAtEnd():
             self.start = self.current
@@ -95,7 +95,7 @@ class Scanner:
             case '\n':
                 self.line += 1
 
-            case '"': 
+            case '"':
                 self.string()
 
             case _:
@@ -107,24 +107,21 @@ class Scanner:
                 else:
                     self.Lox.error(self.line, "Unexpected character.")
 
-
     def identifier(self):
         while self.isAlphaNumeric(self.peek()):
             self.advance()
-        
+
         text = self.source[self.start:self.current]
-        #tok_type is replacement for type (reserved word )
-        tok_type : TokenType = self.keywords[text]
+        # tok_type is replacement for type (reserved word )
+        tok_type: TokenType = self.keywords[text]
         if tok_type == None:
             tok_type = TokenType.IDENTIFIER
 
         self.addToken(TokenType.IDENTIFIER)
 
-    
     def isAlpha(self, c):
         return (c >= 'a' and c <= 'z') or \
             (c >= 'A' and c <= 'Z') or c == '_'
-
 
     def isAlphaNumeric(self, c):
         return self.isAlpha(c) or self.isDigit(c)
@@ -141,40 +138,39 @@ class Scanner:
             while self.isDigit(self.peek()):
                 self.advance()
 
-        self.addToken(TokenType.NUMBER, float(self.source[self.start:self.current]) )
-
+        self.addToken(TokenType.NUMBER, float(
+            self.source[self.start:self.current]))
 
     def string(self):
         while self.peek() != '"' and not self.isAtEnd():
             if self.peek() == '\n':
-                self.line +=1
+                self.line += 1
             self.advance()
 
         if self.isAtEnd():
-            Lox.error(self.line, "Unterminated string")
+            self.Lox.error(self.line, "Unterminated string")
             return
-        
+
         self.advance()
 
         value = self.source[self.start + 1, self.current - 1]
         self.addToken(TokenType.STRING, value)
 
-
     def peekNext(self):
         if self.current + 1 >= len(self.source):
             return '\0'
         return self.source[self.current + 1]
-        
+
     def advance(self):
         self.current += 1
         return self.source[self.current]
 
-    def addToken(self, type: TokenType):
-        self.addToken(type, None)
-
-    def addToken(self, type: TokenType, literal: object):
-        text: str = self.source[self.start, self.current]
-        self.tokens.append(Token(type, text, literal, self.line))
+    def addToken(self, tok_type, literal=0):
+        if literal == 0:
+            self.addToken(tok_type, None)
+        else:
+            text = self.source[self.start: self.current]
+            self.tokens.append(Token(tok_type, text, literal, self.line))
 
     def match(self, expected):
         if self.isAtEnd():
@@ -189,4 +185,3 @@ class Scanner:
         if self.isAtEnd():
             return '\0'
         return self.source[self.current]
-
