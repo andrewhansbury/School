@@ -14,6 +14,7 @@ class Parser:
         self.current = 0
 
     def parse(self):
+
         try:
             return self.expression()
         # This line may need work
@@ -73,6 +74,7 @@ class Parser:
         return self.primary()
 
     def primary(self) -> Expr:
+
         if self.match(TokenType.FALSE):
             return Literal(False)
         if self.match(TokenType.TRUE):
@@ -83,8 +85,8 @@ class Parser:
         if self.match(TokenType.NUMBER, TokenType.STRING):
             return Literal(self.previous().literal)
 
-        if self.match(TokenType.NUMBER, TokenType.STRING):
-            return Literal(self.previous().literal)
+        # if self.match(TokenType.NUMBER, TokenType.STRING):
+        #     return Literal(self.previous().literal)
 
         if self.match(TokenType.LEFT_PAREN):
             expr: Expr = self.expression()
@@ -140,7 +142,7 @@ class Parser:
         return self.peek().tok_type == tok_type
 
     def advance(self) -> Token:
-        if self.isAtEnd():
+        if not self.isAtEnd():
             self.current += 1
 
         return self.previous()
@@ -149,7 +151,7 @@ class Parser:
         return self.peek().tok_type == TokenType.EOF
 
     def peek(self) -> Token:
-        print(self.tokens[self.current])
+        # print(self.tokens[self.current])
         return self.tokens[self.current]
 
     def previous(self) -> Token:

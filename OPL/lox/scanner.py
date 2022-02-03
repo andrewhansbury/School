@@ -170,8 +170,8 @@ class Scanner:
         self.current += 1
         return self.source[self.current-1]
 
-    def addToken(self, tok_type, literal=0):
-        if literal == 0:
+    def addToken(self, tok_type, literal="ahh"):
+        if literal == "ahh":
             self.addToken(tok_type, None)
         else:
             text = self.source[self.start: self.current]

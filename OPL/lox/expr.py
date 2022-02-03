@@ -29,6 +29,7 @@ class Literal(Expr):
         self.value = value
 
     def accept(self, visitor):
+
         return visitor.visitLiteralExpr(self)
 
 

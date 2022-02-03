@@ -57,8 +57,10 @@ class Lox:
         if self.hadError:
             return
 
-        print("poop")
-        print(AstPrinter().printTree(expression))
+        printer = AstPrinter()
+        # print(expression)
+        print(printer.printTree(expression))
+        # print(AstPrinter().printTree(expression))
 
         # PREVIOUS TOKEN PRINTING
         # for token in tokens:

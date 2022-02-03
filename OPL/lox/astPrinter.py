@@ -7,6 +7,7 @@ from tokentypes import TokenType
 class AstPrinter:
 
     def printTree(self, expr) -> str:
+
         return expr.accept(self)
 
     # MAY NEED TO ADJUST FOR THE .LEXEME
@@ -19,6 +20,7 @@ class AstPrinter:
         return self.parenthesize("group", expr.expression)
 
     def visitLiteralExpr(self, expr: Literal):
+
         if expr.value == None:
             return None
 
