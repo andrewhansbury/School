@@ -1,4 +1,3 @@
-
 import sys
 from scanner import Scanner
 
@@ -41,11 +40,11 @@ class Lox:
     def run(self, source: str):
 
         scanner = Scanner(source, self)
-        scanner.scanToken()
+        scanner.scanTokens()
         tokens = scanner.tokens
 
         for token in tokens:
-            print(token)
+            print(str(token))
 
     def main(self):
         if len(sys.argv) > 2:

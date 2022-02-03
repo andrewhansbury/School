@@ -51,6 +51,7 @@ class Scanner:
 
     def scanToken(self):
         c = self.advance()
+
         match c:
             case '(': self.addToken(TokenType.LEFT_PAREN)
             case ')': self.addToken(TokenType.RIGHT_PAREN)
@@ -113,11 +114,15 @@ class Scanner:
 
         text = self.source[self.start:self.current]
         # tok_type is replacement for type (reserved word )
-        tok_type: TokenType = self.keywords[text]
-        if tok_type == None:
+
+        tok_type = None
+        if text in self.keywords:
+            tok_type = self.keywords[text]
+
+        elif tok_type == None:
             tok_type = TokenType.IDENTIFIER
 
-        self.addToken(TokenType.IDENTIFIER)
+        self.addToken(tok_type)
 
     def isAlpha(self, c):
         return (c >= 'a' and c <= 'z') or \
@@ -153,7 +158,7 @@ class Scanner:
 
         self.advance()
 
-        value = self.source[self.start + 1, self.current - 1]
+        value = self.source[self.start + 1: self.current - 1]
         self.addToken(TokenType.STRING, value)
 
     def peekNext(self):
@@ -163,7 +168,7 @@ class Scanner:
 
     def advance(self):
         self.current += 1
-        return self.source[self.current]
+        return self.source[self.current-1]
 
     def addToken(self, tok_type, literal=0):
         if literal == 0:
