@@ -1,4 +1,9 @@
+
+from astPrinter import AstPrinter
+from parser import Parser
 import sys
+from tokens import Token
+from tokentypes import TokenType
 from scanner import Scanner
 
 
@@ -13,8 +18,14 @@ class Lox:
         print("[line " + line + "] Error" + where + ": " + message)
         self.hadError = True
 
-    def error(self, line: int, message: str) -> None:
-        self.report(line, "", message)
+    def error(self, token: Token, message: str):
+        if token.tok_type == TokenType.EOF:
+            self.report(token.line, " at end", message)
+        else:
+            self.report(token.line, " at end", message)
+
+    # def error(self, line: int, message: str) -> None:
+    #     self.report(line, "", message)
 
     def runPrompt(self):
         while True:
@@ -27,9 +38,6 @@ class Lox:
                 break
 
     # Is this what pylox should do when one file is passed?
-    # how to make the equivalent System.exit(65)... what is
-    # the 65?
-
     def runFile(self, path):
         print(type(path))
         exec(path)
@@ -43,8 +51,18 @@ class Lox:
         scanner.scanTokens()
         tokens = scanner.tokens
 
-        for token in tokens:
-            print(str(token))
+        parser: Parser = Parser(tokens, self)
+        expression = parser.parse()
+
+        if self.hadError:
+            return
+
+        print("poop")
+        print(AstPrinter().printTree(expression))
+
+        # PREVIOUS TOKEN PRINTING
+        # for token in tokens:
+        #     print(str(token))
 
     def main(self):
         if len(sys.argv) > 2:

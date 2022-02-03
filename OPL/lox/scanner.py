@@ -12,7 +12,7 @@ class Scanner:
     def __init__(self, source, Lox):
         self.Lox = Lox
         self.source: str = source
-        self.tokens = [Token]
+        self.tokens = []
 
         self.start = 0
         self.current = 0

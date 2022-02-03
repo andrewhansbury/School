@@ -1,4 +1,3 @@
-import re
 from tokens import Token
 
 
