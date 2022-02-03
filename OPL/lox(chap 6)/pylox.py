@@ -1,8 +1,7 @@
-from cmath import exp
-import sys
+
 from astPrinter import AstPrinter
-from interpreter import Interpreter
 from parser import Parser
+import sys
 from tokens import Token
 from tokentypes import TokenType
 from scanner import Scanner
@@ -11,9 +10,7 @@ from scanner import Scanner
 class Lox:
 
     def __init__(self):
-        self.interpreter = Interpreter(self)
         self.hadError = False
-        self.hadRuntimeError = False
 
     # This probably needs work... 4.1.1 system.err.print.ln
 
@@ -29,10 +26,6 @@ class Lox:
 
     # def error(self, line: int, message: str) -> None:
     #     self.report(line, "", message)
-
-    def runtimeError(self, error: RuntimeError):
-        print(str(error) + "\n[line " + str(error.token.line) + "]")
-        self.hadRuntimeError = True
 
     def runPrompt(self):
         while True:
@@ -51,8 +44,6 @@ class Lox:
         # Indicate an error in the exit code
         if (self.hadError):
             exit()
-        if self.hadRuntimeError:
-            exit()
 
     def run(self, source: str):
 
@@ -63,9 +54,8 @@ class Lox:
         parser: Parser = Parser(tokens, self)
         expression = parser.parse()
 
-        # if self.hadError:
-        #     return
-        self.interpreter.interpret(expression)
+        if self.hadError:
+            return
 
         printer = AstPrinter()
         # print(expression)
