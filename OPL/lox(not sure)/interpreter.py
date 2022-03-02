@@ -1,9 +1,9 @@
 
 
-import re
+from email import message
+from pickletools import floatnl
 from typing import Literal
 from expr import *
-from stmt import *
 from tokentypes import TokenType
 
 
@@ -17,26 +17,13 @@ class Interpreter:
     def __init__(self, Lox) -> None:
         self.Lox = Lox
 
-    def interpret(self, statements):
+    def interpret(self, expression: Expr):
         try:
-            for statement in statements:
-                self.execute(statement)
-        
+            value = self.evaluate(expression)
+            print(self.stringify(value))
+
         except RuntimeErrors as error:
             self.Lox.runtimeError(error)
-
-    def execute(self, stmt:Stmt) -> None:
-        stmt.accept(self)
-
-        
-       
-    # def interpret(self, expression: Expr):
-    #     try:
-    #         value = self.evaluate(expression)
-    #         print(self.stringify(value))
-
-    #     except RuntimeErrors as error:
-    #         self.Lox.runtimeError(error)
 
     def visitLiteralExpr(self, expr: Literal, ):
         return expr.value
@@ -46,15 +33,6 @@ class Interpreter:
 
     def evaluate(self, expr: Expr):
         return expr.accept(self)
-
-    def visitExpressionStmt(self, stmt:Expression):
-        self.evaluate(stmt.expr)
-        return None
-    
-    def visitPrintStmt(self,stmt):
-        value = self.evaluate(stmt.expr)
-        print(self.stringify(value))
-        return None
 
     def visitUnaryExpr(self, expr: Unary):
         right = self.evaluate(expr.right)
@@ -74,12 +52,12 @@ class Interpreter:
 
         raise RuntimeErrors(operator, "Operand must be a number.")
 
-    def checkOperands(self, operator: Token, left, right="poop"):
-        if (type(left) == float and type(right) == float) or (type(left == str and type(right) == str)):
+    
+
+    def checkNumberOperands(self, operator: Token, left, right="poop"):
+        if type(left) == float and type(right) == float:
             return
-        raise RuntimeErrors(operator, "Operands must be numbers or strings")
-
-
+        raise RuntimeErrors(operator, "Operands must be numbers.")
 
     def isTruthy(self, object) -> bool:
         if object == None:
@@ -99,23 +77,23 @@ class Interpreter:
             return self.isEqual(left, right)
 
         if expr.operator.tok_type == TokenType.GREATER:
-            self.checkOperands(expr.operator, left, right)
-            return left > right
+            self.checkNumberOperands(expr.operator, left, right)
+            return float(left) > float(right)
 
         if expr.operator.tok_type == TokenType.GREATER_EQUAL:
-            self.checkOperands(expr.operator, left, right)
-            return left >= right
+            self.checkNumberOperands(expr.operator, left, right)
+            return float(left) >= float(right)
 
         if expr.operator.tok_type == TokenType.LESS:
-            self.checkOperands(expr.operator, left, right)
-            return left < right
+            self.checkNumberOperands(expr.operator, left, right)
+            return float(left) < float(right)
 
         if expr.operator.tok_type == TokenType.LESS_EQUAL:
-            self.checkOperands(expr.operator, left, right)
-            return left <= right
+            self.checkNumberOperands(expr.operator, left, right)
+            return float(left) <= float(right)
 
         if expr.operator.tok_type == TokenType.MINUS:
-            self.checkOperands(expr.operator, left, right)
+            self.checkNumberOperands(expr.operator, left, right)
             return float(left) - float(right)
 
         if expr.operator.tok_type == TokenType.PLUS:
@@ -129,7 +107,7 @@ class Interpreter:
                 expr.operator, "Operands must be two numbers or two strings.")
 
         if expr.operator.tok_type == TokenType.SLASH:
-            self.checkOperands(expr.operator, left, right)
+            self.checkNumberOperands(expr.operator, left, right)
             return float(left) / float(right)
 
         if expr.operator.tok_type == TokenType.STAR:
@@ -146,12 +124,6 @@ class Interpreter:
         return a == b
 
     def stringify(self, object):
-        if object == False:
-            return "false"
-
-        if object == True:
-            return "true"
-
         if object == None:
             return "None"
 

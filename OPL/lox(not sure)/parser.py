@@ -1,7 +1,4 @@
-from os import stat
-import re
 from expr import *
-from stmt import *
 from tokentypes import TokenType
 from tokens import Token
 
@@ -11,41 +8,18 @@ class ParseError(Exception):
 
 
 class Parser:
-    def __init__(self, tokens: 'list[Token]', Lox) -> None:
+    def __init__(self, tokens: list[Token], Lox) -> None:
         self.Lox = Lox
         self.tokens = tokens
         self.current = 0
 
-    # def parse(self):
-
-    #     try:
-    #         return self.expression()
-    #     # This line may need work
-    #     except ParseError:
-    #         return None
-
     def parse(self):
-        statements = []
-        while not self.isAtEnd():
-            statements.append(self.statement())
-        
-        return statements
-    
-    def statement(self) -> Stmt:
-        if self.match(TokenType.PRINT):
-            return self.printStatement()
-        return self.expressionStatement()
 
-
-    def printStatement(self) -> Stmt:
-        value = self.expression()
-        self.consume(TokenType.SEMICOLON, "Expect ';' after value.")
-        return Print(value)
-
-    def expressionStatement(self) -> Stmt:
-        expr = self.expression()
-        self.consume(TokenType.SEMICOLON, "Expect ';' after expression.")
-        return Expression(expr)
+        try:
+            return self.expression()
+        # This line may need work
+        except ParseError:
+            return None
 
     def expression(self) -> Expr:
         return self.equality()
@@ -116,7 +90,7 @@ class Parser:
 
         if self.match(TokenType.LEFT_PAREN):
             expr: Expr = self.expression()
-            self.consume(TokenType.RIGHT_PAREN, "Expect ')' after expression.")
+            self.consume(TokenType, "Expect ')' after expression.")
             return Grouping(expr)
 
         raise self.error(self.peek(), "Expect expression.")

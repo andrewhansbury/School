@@ -1,4 +1,3 @@
-from ast import parse
 from cmath import exp
 import sys
 from astPrinter import AstPrinter
@@ -19,7 +18,7 @@ class Lox:
     # This probably needs work... 4.1.1 system.err.print.ln
 
     def report(self, line: int, where: str, message: str) -> None:
-        print("[line " + str(line) + "] Error" + where + ": " + message)
+        print("[line " + line + "] Error" + where + ": " + message)
         self.hadError = True
 
     def error(self, token: Token, message: str):
@@ -38,7 +37,7 @@ class Lox:
     def runPrompt(self):
         while True:
             try:
-                line = input("")
+                line = input("> ")
                 self.run(line)
                 self.hadError = False
             except (EOFError, KeyboardInterrupt) as e:
@@ -56,23 +55,21 @@ class Lox:
             exit()
 
     def run(self, source: str):
-        self.hadError = False
+
         scanner = Scanner(source, self)
         scanner.scanTokens()
         tokens = scanner.tokens
 
         parser: Parser = Parser(tokens, self)
-        statements = parser.parse()
+        expression = parser.parse()
 
-        # expression = parser.parse()
-
-        if self.hadError:
-            return
-        self.interpreter.interpret(statements)
+        # if self.hadError:
+        #     return
+        self.interpreter.interpret(expression)
 
         printer = AstPrinter()
         # print(expression)
-        # print(printer.printTree(expression))
+        print(printer.printTree(expression))
         # print(AstPrinter().printTree(expression))
 
         # PREVIOUS TOKEN PRINTING

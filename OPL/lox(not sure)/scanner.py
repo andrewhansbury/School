@@ -1,5 +1,11 @@
+
+
 from tokentypes import TokenType
 from tokens import Token
+
+# may need to create the ENUMS (tokentype file)
+
+# need to pass Lox otherwise circular dependency
 
 
 class Scanner:
@@ -44,75 +50,63 @@ class Scanner:
         return self.current >= len(self.source)
 
     def scanToken(self):
-        case = self.advance()
+        c = self.advance()
 
-        if case == '(':
-            self.addToken(TokenType.LEFT_PAREN)
-        elif case == ')':
-            self.addToken(TokenType.RIGHT_PAREN)
-        elif case == '{':
-            self.addToken(TokenType.LEFT_BRACE)
-        elif case == '}':
-            self.addToken(TokenType.RIGHT_BRACE)
-        elif case == ',':
-            self.addToken(TokenType.COMMA)
-        elif case == '.':
-            self.addToken(TokenType.DOT)
-        elif case == '-':
-            self.addToken(TokenType.MINUS)
-        elif case == '+':
-            self.addToken(TokenType.PLUS)
-        elif case == ';':
-            self.addToken(TokenType.SEMICOLON)
-        elif case == '*':
-            self.addToken(TokenType.STAR)
+        match c:
+            case '(': self.addToken(TokenType.LEFT_PAREN)
+            case ')': self.addToken(TokenType.RIGHT_PAREN)
+            case '{': self.addToken(TokenType.LEFT_BRACE)
+            case '}': self.addToken(TokenType.RIGHT_BRACE)
+            case ',': self.addToken(TokenType.COMMA)
+            case '.': self.addToken(TokenType.DOT)
+            case '-': self.addToken(TokenType.MINUS)
+            case '+': self.addToken(TokenType.PLUS)
+            case ';': self.addToken(TokenType.SEMICOLON)
+            case '*': self.addToken(TokenType.STAR)
 
-        elif case == '!':
-            value = TokenType.BANG_EQUAL if self.match(
-                '=') else TokenType.BANG
-            self.addToken(value)
-        elif case == '=':
-            value = TokenType.EQUAL_EQUAL if self.match(
-                '=') else TokenType.EQUAL
-            self.addToken(value)
-        elif case == '<':
-            value = TokenType.LESS_EQUAL if self.match(
-                '=') else TokenType.LESS
-            self.addToken(value)
-        elif case == '>':
-            value = TokenType.GREATER_EQUAL if self.match(
-                '=') else TokenType.GREATER
-            self.addToken(value)
+            case '!':
+                value = TokenType.BANG_EQUAL if self.match(
+                    '=') else TokenType.BANG
+                self.addToken(value)
+            case '=':
+                value = TokenType.EQUAL_EQUAL if self.match(
+                    '=') else TokenType.EQUAL
+                self.addToken(value)
+            case '<':
+                value = TokenType.LESS_EQUAL if self.match(
+                    '=') else TokenType.LESS
+                self.addToken(value)
+            case '>':
+                value = TokenType.GREATER_EQUAL if self.match(
+                    '=') else TokenType.GREATER
+                self.addToken(value)
 
-        elif case == '/':
-            if self.match('/'):
-                while self.peek() != '\n' and not self.isAtEnd():
-                    self.advance()
-            else:
-                self.addToken(TokenType.SLASH)
+            case '/':
+                if self.match('/'):
+                    while self.peek() != '\n' and not self.isAtEnd():
+                        self.advance()
+                else:
+                    self.addToken(TokenType.SLASH)
 
-        # // Ignore whitespace.
-        elif case == ' ':
-            None
-        elif case == '\r':
-            None
-        elif case == '\t':
-            None
+            # // Ignore whitespace.
+            case ' ': None
+            case '\r': None
+            case '\t': None
 
-        elif case == '\n':
-            self.line += 1
+            case '\n':
+                self.line += 1
 
-        elif case == '"':
-            self.string()
+            case '"':
+                self.string()
 
-        else:
-            if self.isDigit(case):
-                self.number()
-            elif self.isAlpha(case):
-                self.identifier()
+            case _:
+                if self.isDigit(c):
+                    self.number()
+                elif self.isAlpha(c):
+                    self.identifier()
 
-            else:
-                self.Lox.error(self.line, "Unexpected character.")
+                else:
+                    self.Lox.error(self.line, "Unexpected character.")
 
     def identifier(self):
         while self.isAlphaNumeric(self.peek()):
