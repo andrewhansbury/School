@@ -1,4 +1,3 @@
-from os import stat
 import re
 from expr import *
 from stmt import *
@@ -27,20 +26,39 @@ class Parser:
     def parse(self):
         statements = []
         while not self.isAtEnd():
-            statements.append(self.statement())
-        
+            statements.append(self.declaration())
+
         return statements
-    
+
+    def declaration(self):
+        try:
+            if self.match(TokenType.VAR):
+                return self.varDeclaration
+        except ParseError as error:
+            self.synchronize()
+            return None
+
     def statement(self) -> Stmt:
         if self.match(TokenType.PRINT):
             return self.printStatement()
         return self.expressionStatement()
 
-
     def printStatement(self) -> Stmt:
         value = self.expression()
         self.consume(TokenType.SEMICOLON, "Expect ';' after value.")
         return Print(value)
+
+    def varDeclaration(self):
+        name: Token = self.consume(
+            TokenType.IDENTIFIER, "Expect variable name.")
+
+        initializer: Expr = None
+        if self.match(TokenType.EQUAL):
+            initializer = self.expression()
+
+        self.consume(TokenType.SEMICOLON,
+                     "Expect ';' after variable declaration.")
+        return Var(name, initializer)
 
     def expressionStatement(self) -> Stmt:
         expr = self.expression()
@@ -110,6 +128,9 @@ class Parser:
 
         if self.match(TokenType.NUMBER, TokenType.STRING):
             return Literal(self.previous().literal)
+
+        if self.match(TokenType.IDENTIFIER):
+            return Variable(self.previous())
 
         # if self.match(TokenType.NUMBER, TokenType.STRING):
         #     return Literal(self.previous().literal)

@@ -4,6 +4,7 @@ from expr import Expr
 class Stmt:
     pass
 
+
 class Expression(Stmt):
     def __init__(self, expr: Expr):
         self.expr = expr
@@ -11,19 +12,22 @@ class Expression(Stmt):
     def accept(self, visitor):
         return visitor.visitExpressionStmt(self)
 
+
 class Print(Stmt):
     def __init__(self, expr: Expr):
         self.expr = expr
+
     def accept(self, visitor):
         return visitor.visitPrintStmt(self)
 
-# class Var(Stmt):
-#     def __init__(self, name: Token, initializer: Expr):
-#         self.name = name
-#         self.initializer = initializer
 
-#     def accept(self, visitor):
-#         return visitor.visit_var_stmt(self)
+class Var(Stmt):
+    def __init__(self, name, initializer: Expr):
+        self.name = name
+        self.initializer = initializer
+
+    def accept(self, visitor):
+        return visitor.visit_var_stmt(self)
 
 # class Block(Stmt):
 #     def __init__(self, statements: list[Stmt]):
@@ -63,7 +67,7 @@ class Print(Stmt):
 #         self.super_class = super_class
 #         self.methods = methods
 #         self.class_methods = class_methods
-    
+
 #     def accept(self, visitor):
 #         return visitor.visit_class_stmt(self)
 
