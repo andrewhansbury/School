@@ -5,6 +5,15 @@ class Expr:
     pass
 
 
+class Assign(Expr):
+    def __init__(self, name: Token, value: Expr) -> None:
+        self.name = name
+        self.value = value
+
+    def accept(self, visitor):
+        return visitor.visitAssignExpr(self)
+
+
 class Binary(Expr):
 
     def __init__(self, left, operator: Token, right):

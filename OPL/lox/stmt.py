@@ -5,6 +5,14 @@ class Stmt:
     pass
 
 
+class Block(Stmt):
+    def __init__(self, statements: 'list[Stmt]') -> None:
+        self.statements = statements
+
+    def accept(self, visitor):
+        return visitor.visitBlockStmt(self)
+
+
 class Expression(Stmt):
     def __init__(self, expr: Expr):
         self.expr = expr

@@ -47,8 +47,8 @@ class Lox:
 
     # Is this what pylox should do when one file is passed?
     def runFile(self, path):
-        print(type(path))
-        exec(path)
+        # print(type(path))
+        self.run(path)
         # Indicate an error in the exit code
         if (self.hadError):
             exit()

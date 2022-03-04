@@ -1,8 +1,6 @@
-
-
-import re
 from typing import Literal
 from expr import *
+from environment import Environment
 from stmt import *
 from tokentypes import TokenType
 
@@ -16,20 +14,19 @@ class RuntimeErrors (RuntimeError):
 class Interpreter:
     def __init__(self, Lox) -> None:
         self.Lox = Lox
+        self.environmnent = Environment
 
     def interpret(self, statements):
         try:
             for statement in statements:
                 self.execute(statement)
-        
+
         except RuntimeErrors as error:
             self.Lox.runtimeError(error)
 
-    def execute(self, stmt:Stmt) -> None:
+    def execute(self, stmt: Stmt) -> None:
         stmt.accept(self)
 
-        
-       
     # def interpret(self, expression: Expr):
     #     try:
     #         value = self.evaluate(expression)
@@ -38,7 +35,20 @@ class Interpreter:
     #     except RuntimeErrors as error:
     #         self.Lox.runtimeError(error)
 
-    def visitLiteralExpr(self, expr: Literal, ):
+    def visitBlockStmt(self, stmt: Block):
+        self.executeBlock(stmt.statements, Environment(self.environmnent))
+        return None
+
+    def executeBlock(self, statements: 'list[Stmt]', environment: Environment):
+        previous = self.environmnent
+        try:
+            self.environmnent = environment
+            for statement in statements:
+                self.execute(statement)
+        finally:
+            self.environmnent = previous
+
+    def visitLiteralExpr(self, expr: Literal):
         return expr.value
 
     def visitGroupingExpr(self, expr: Grouping):
@@ -47,11 +57,11 @@ class Interpreter:
     def evaluate(self, expr: Expr):
         return expr.accept(self)
 
-    def visitExpressionStmt(self, stmt:Expression):
+    def visitExpressionStmt(self, stmt: Expression):
         self.evaluate(stmt.expr)
         return None
-    
-    def visitPrintStmt(self,stmt):
+
+    def visitPrintStmt(self, stmt):
         value = self.evaluate(stmt.expr)
         print(self.stringify(value))
         return None
@@ -68,6 +78,23 @@ class Interpreter:
 
         return None
 
+    def visitVarStmt(self, stmt: Var):
+        value = None
+        if stmt.initializer != None:
+            value = self.evaluate(stmt.initializer)
+
+        self.environmnent.define(stmt.name.lexeme, value)
+        return None
+
+    def visitAssignExpr(self, expr: Assign):
+        value = self.evaluate(expr.value)
+        self.environmnent.assign(expr.name, value)
+        return value
+
+    def visitVariableExpr(self, expr: Variable):
+
+        return self.environmnent.get(expr.name)
+
     def checkNumberOperand(self, operator, operand):
         if type(operand) == float:
             return
@@ -78,8 +105,6 @@ class Interpreter:
         if (type(left) == float and type(right) == float) or (type(left == str and type(right) == str)):
             return
         raise RuntimeErrors(operator, "Operands must be numbers or strings")
-
-
 
     def isTruthy(self, object) -> bool:
         if object == None:
