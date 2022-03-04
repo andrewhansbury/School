@@ -33,7 +33,8 @@ class Parser:
     def declaration(self):
         try:
             if self.match(TokenType.VAR):
-                return self.varDeclaration
+                return self.varDeclaration()
+            return self.statement()
         except ParseError as error:
             self.synchronize()
             return None

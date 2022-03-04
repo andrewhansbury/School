@@ -35,7 +35,7 @@ class Var(Stmt):
         self.initializer = initializer
 
     def accept(self, visitor):
-        return visitor.visit_var_stmt(self)
+        return visitor.visitVarStmt(self)
 
 # class Block(Stmt):
 #     def __init__(self, statements: list[Stmt]):

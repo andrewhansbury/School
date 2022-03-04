@@ -14,7 +14,7 @@ class RuntimeErrors (RuntimeError):
 class Interpreter:
     def __init__(self, Lox) -> None:
         self.Lox = Lox
-        self.environmnent = Environment
+        self.environmnent = Environment()
 
     def interpret(self, statements):
         try:
@@ -61,7 +61,7 @@ class Interpreter:
         self.evaluate(stmt.expr)
         return None
 
-    def visitPrintStmt(self, stmt):
+    def visitPrintStmt(self, stmt: Print):
         value = self.evaluate(stmt.expr)
         print(self.stringify(value))
         return None

@@ -47,8 +47,14 @@ class Lox:
 
     # Is this what pylox should do when one file is passed?
     def runFile(self, path):
-        # print(type(path))
-        self.run(path)
+        f = open(path, "r")
+        lines = f.readlines()
+
+        for line in lines:
+            self.run(line)
+
+        # self.run(path)
+
         # Indicate an error in the exit code
         if (self.hadError):
             exit()
@@ -83,7 +89,7 @@ class Lox:
         if len(sys.argv) > 2:
             print("Usage: pylox [path]")
         elif len(sys.argv) == 2:
-            print(sys.argv[1])
+            # print(sys.argv[1])
             self.runFile(sys.argv[1])
         else:
             self.runPrompt()
