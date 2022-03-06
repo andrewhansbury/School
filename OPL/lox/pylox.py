@@ -50,10 +50,8 @@ class Lox:
         f = open(path, "r")
         lines = f.readlines()
 
-        for line in lines:
-            self.run(line)
-
-        # self.run(path)
+        source = "".join(lines)
+        self.run(source)
 
         # Indicate an error in the exit code
         if (self.hadError):
