@@ -16,13 +16,20 @@ class Interpreter:
         self.Lox = Lox
         self.environmnent = Environment()
 
-    def interpret(self, expression):
+    def StringInterpret(self, expression):
         try:
             value = self.evaluate(expression)
             return self.stringify(value)
         except RuntimeErrors as error:
             self.Lox.runtimeError(error)
             return None
+
+    def interpret(self, statements):
+        try:
+            for statement in statements:
+                self.execute(statement)
+        except RuntimeErrors as error:
+            self.Lox.runtimeError(error)
 
     def execute(self, stmt: Stmt) -> None:
         stmt.accept(self)
@@ -58,7 +65,9 @@ class Interpreter:
         return expr.accept(self)
 
     def visitExpressionStmt(self, stmt: Expression):
-        self.evaluate(stmt.expr)
+        # self.evaluate(stmt.expr)
+        value = self.evaluate(stmt.expr)
+        print(self.stringify(value))
         return None
 
     def visitPrintStmt(self, stmt: Print):

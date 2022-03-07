@@ -1,4 +1,4 @@
-from cgitb import reset
+
 import sys
 from astPrinter import AstPrinter
 from expr import Expr
@@ -48,14 +48,11 @@ class Lox:
                 continue
             if isinstance(syntax, list):
                 self.interpreter.interpret(syntax)
-            elif isinstance(syntax,Expr):
-                result = self.interpreter.interpret(syntax)
+            elif isinstance(syntax, Expr):
+                result = self.interpreter.StringInterpret(syntax)
                 if result != None:
                     print("= " + result)
 
-
-
-    # Is this what pylox should do when one file is passed?
     def runFile(self, path):
         f = open(path, "r")
         lines = f.readlines()
@@ -77,13 +74,18 @@ class Lox:
         tokens = scanner.tokens
 
         parser: Parser = Parser(tokens, self)
-        statements = parser.parse()
+        syntax = parser.parseRepl()
 
         # expression = parser.parse()
 
         if self.hadError:
             return
-        self.interpreter.interpret(statements)
+        if isinstance(syntax, list):
+            self.interpreter.interpret(syntax)
+        elif isinstance(syntax, Expr):
+            result = self.interpreter.StringInterpret(syntax)
+            if result != None:
+                print("= " + result)
 
         printer = AstPrinter()
         # print(expression)
