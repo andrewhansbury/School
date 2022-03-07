@@ -1,5 +1,4 @@
-from ast import parse
-from cmath import exp
+
 import sys
 from astPrinter import AstPrinter
 from interpreter import Interpreter
@@ -49,8 +48,8 @@ class Lox:
     def runFile(self, path):
         f = open(path, "r")
         lines = f.readlines()
-
         source = "".join(lines)
+
         self.run(source)
 
         # Indicate an error in the exit code

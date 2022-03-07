@@ -1,3 +1,4 @@
+from turtle import st
 from typing import Literal
 from expr import *
 from environment import Environment
@@ -43,6 +44,7 @@ class Interpreter:
         previous = self.environmnent
         try:
             self.environmnent = environment
+
             for statement in statements:
                 self.execute(statement)
         finally:
@@ -50,6 +52,16 @@ class Interpreter:
 
     def visitLiteralExpr(self, expr: Literal):
         return expr.value
+
+    def visitLogicalExpr(self, expr: Logical):
+        left = self.evaluate(expr.left)
+        if expr.operator.tok_type == TokenType.OR:
+            if self.isTruthy(left):
+                return left
+            elif not self.isTruthy(left):
+                return left
+
+        return self.evaluate(expr.right)
 
     def visitGroupingExpr(self, expr: Grouping):
         return self.evaluate(expr.expression)
@@ -59,6 +71,14 @@ class Interpreter:
 
     def visitExpressionStmt(self, stmt: Expression):
         self.evaluate(stmt.expr)
+        return None
+
+    def visitIfStmt(self, stmt: If):
+        if self.isTruthy(self.evaluate(stmt.condition)):
+            self.execute(stmt.then_branch)
+        elif stmt.else_branch != None:
+            self.execute(stmt.else_branch)
+
         return None
 
     def visitPrintStmt(self, stmt: Print):
@@ -84,6 +104,11 @@ class Interpreter:
             value = self.evaluate(stmt.initializer)
 
         self.environmnent.define(stmt.name.lexeme, value)
+        return None
+
+    def visitWhileStmt(self, stmt: While):
+        while self.isTruthy(self.evaluate(stmt.condition)):
+            self.execute(stmt.body)
         return None
 
     def visitAssignExpr(self, expr: Assign):
@@ -171,21 +196,11 @@ class Interpreter:
         return a == b
 
     def stringify(self, object):
-        if object == False:
-            return "false"
-
-        if object == True:
-            return "true"
 
         if object == None:
-            return "None"
-
-        if type(object) == float:
-            text = str(object)
-
-            if text.endswith(".0"):
-                text = text[0: len(text)-2]
-
+            return None
+        text = str(object)
+        if text.endswith(".0"):
+            text = text[0: len(text)-2]
             return text
-
         return str(object)

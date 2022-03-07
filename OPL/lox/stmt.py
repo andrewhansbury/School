@@ -37,6 +37,26 @@ class Var(Stmt):
     def accept(self, visitor):
         return visitor.visitVarStmt(self)
 
+
+class If(Stmt):
+    def __init__(self, condition: Expr, then_branch: Stmt, else_branch: Stmt):
+        self.condition = condition
+        self.then_branch = then_branch
+        self.else_branch = else_branch
+
+    def accept(self, visitor):
+        return visitor.visitIfStmt(self)
+
+
+class While(Stmt):
+    def __init__(self, condition: Expr, body: Stmt):
+        self.condition = condition
+        self.body = body
+
+    def accept(self, visitor):
+        return visitor.visitWhileStmt(self)
+
+
 # class Block(Stmt):
 #     def __init__(self, statements: list[Stmt]):
 #         self.statements = statements
@@ -44,14 +64,6 @@ class Var(Stmt):
 #     def accept(self, visitor):
 #         return visitor.visit_block_stmt(self)
 
-# class If(Stmt):
-#     def __init__(self, condition: Expr, then_branch: Stmt, else_branch: Stmt):
-#         self.condition = condition
-#         self.then_branch = then_branch
-#         self.else_branch = else_branch
-
-#     def accept(self, visitor):
-#         return visitor.visit_if_stmt(self)
 
 # class Fun(Stmt):
 #     def __init__(self, name: Token, function: "Function"):
@@ -79,14 +91,6 @@ class Var(Stmt):
 #     def accept(self, visitor):
 #         return visitor.visit_class_stmt(self)
 
-
-# class While(Stmt):
-#     def __init__(self, condition: Expr, body: Stmt):
-#         self.condition = condition
-#         self.body = body
-
-#     def accept(self, visitor):
-#         return visitor.visit_while_stmt(self)
 
 # class Break(Stmt):
 #     def __init__(self):

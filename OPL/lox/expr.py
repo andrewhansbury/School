@@ -1,3 +1,4 @@
+from operator import le
 from tokens import Token
 
 
@@ -57,3 +58,13 @@ class Variable(Expr):
 
     def accept(self, visitor):
         return visitor.visitVariableExpr(self)
+    
+class Logical(Expr):
+    def __init__(self, left:Expr, operator:Token, right:Expr) -> None:
+        self.left = left
+        self.operator = operator
+        self.right = right
+    
+    def accept(self, visitor):
+        return visitor.visitLogicalExpr(self)
+        

@@ -26,7 +26,7 @@ class Environment:
             return
 
         if self.enclosing != None:
-            self.assign(name, value)
+            self.enclosing.assign(name, value)
             return
 
         raise RuntimeError(name, "Undefined variable '" + name.lexeme + "'.")
