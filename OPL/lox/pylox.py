@@ -25,7 +25,7 @@ class Lox:
         if token.tok_type == TokenType.EOF:
             self.report(token.line, " at end", message)
         else:
-            self.report(token.line, " at end", message)
+            self.report(token.line, " at '" + token.lexeme + "'", message)
 
     # def error(self, line: int, message: str) -> None:
     #     self.report(line, "", message)
