@@ -59,7 +59,6 @@ class Lox:
             exit()
 
     def run(self, source: str):
-        self.hadError = False
         scanner = Scanner(source, self)
         scanner.scanTokens()
         tokens = scanner.tokens

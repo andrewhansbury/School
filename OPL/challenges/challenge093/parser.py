@@ -42,6 +42,8 @@ class Parser:
             return None
 
     def statement(self) -> Stmt:
+        if self.match(TokenType.CONTINUE):
+            return self.continueStatement()
         if self.match(TokenType.BREAK):
             return self.breakStatement()
         if self.match(TokenType.FOR):
@@ -55,6 +57,13 @@ class Parser:
         if self.match(TokenType.LEFT_BRACE):
             return Block(self.block())
         return self.expressionStatement()
+
+    def continueStatement(self):
+        if self.loopDepth ==0:
+            self.error(self.previous(), "'continue' is only allowed in a loop.")
+            
+        self.consume(TokenType.SEMICOLON, "Expect ';' after 'continue'.")
+        return Continue()
 
     def breakStatement(self):
         if self.loopDepth ==0:
@@ -100,7 +109,7 @@ class Parser:
 
             if condition == None:
                 condition = Literal(True)
-            body = While(condition, body)
+            body = While(condition, body, True)
 
             if initializer != None:
                 body = Block([initializer, body])
@@ -147,7 +156,7 @@ class Parser:
             self.loopDepth +=1
             body = self.statement()
 
-            return While(condition, body)
+            return While(condition, body, False)
         finally:
             self.loopDepth -=1
 

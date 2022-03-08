@@ -1,4 +1,5 @@
 from enum import Enum, auto
+from http.client import CONTINUE
 from re import A
 
 
@@ -50,4 +51,5 @@ class TokenType(Enum):
     WHILE = auto()
 
     BREAK = auto()
+    CONTINUE = auto()
     EOF = auto()

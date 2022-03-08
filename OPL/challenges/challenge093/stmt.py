@@ -49,9 +49,11 @@ class If(Stmt):
 
 
 class While(Stmt):
-    def __init__(self, condition: Expr, body: Stmt):
+    def __init__(self, condition: Expr, body: Stmt, for_loop):
         self.condition = condition
         self.body = body
+
+        self.for_loop = for_loop
 
     def accept(self, visitor):
         return visitor.visitWhileStmt(self)
@@ -62,6 +64,13 @@ class Break(Stmt):
 
     def accept(self, visitor):
         return visitor.visitBreakStmt(self)
+
+class Continue(Stmt):
+    def __init__(self):
+        pass
+
+    def accept(self, visitor):
+        return visitor.visitContinueStmt(self)
 
 # class Block(Stmt):
 #     def __init__(self, statements: list[Stmt]):

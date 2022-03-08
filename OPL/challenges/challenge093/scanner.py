@@ -14,6 +14,7 @@ class Scanner:
 
         self.keywords = {
             "break": TokenType.BREAK,
+            "continue" : TokenType.CONTINUE,
             "and": TokenType.AND,
             "class": TokenType.CLASS,
             "else": TokenType.ELSE,
@@ -30,6 +31,7 @@ class Scanner:
             "true": TokenType.TRUE,
             "var": TokenType.VAR,
             "while": TokenType.WHILE,
+            
         }
 
     def scanTokens(self) -> 'list[Token]':

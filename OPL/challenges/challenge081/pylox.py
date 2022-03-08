@@ -39,7 +39,7 @@ class Lox:
 
         while True:
             self.hadError = False
-            scanner = Scanner(input(">"), self)
+            scanner = Scanner(input(""), self)
             tokens = scanner.scanTokens()
             parser = Parser(tokens, self)
             syntax = parser.parseRepl()
@@ -51,7 +51,7 @@ class Lox:
             elif isinstance(syntax, Expr):
                 result = self.interpreter.StringInterpret(syntax)
                 if result != None:
-                    print("= " + result)
+                    print("" + result)
 
     def runFile(self, path):
         f = open(path, "r")
@@ -85,7 +85,7 @@ class Lox:
         elif isinstance(syntax, Expr):
             result = self.interpreter.StringInterpret(syntax)
             if result != None:
-                print("= " + result)
+                print("" + result)
 
         printer = AstPrinter()
         # print(expression)

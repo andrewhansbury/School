@@ -43,23 +43,22 @@ class Parser:
 
         if self.match(TokenType.FOR):
             return self.forStatement()
-        if self.match(TokenType.IF):
+        elif self.match(TokenType.IF):
             return self.ifStatement()
-        if self.match(TokenType.PRINT):
+        elif self.match(TokenType.PRINT):
             return self.printStatement()
-        if self.match(TokenType.WHILE):
+        elif self.match(TokenType.WHILE):
             return self.whileStatement()
-        if self.match(TokenType.LEFT_BRACE):
+        elif self.match(TokenType.LEFT_BRACE):
             return Block(self.block())
-        if self.match(TokenType.EXIT):
-            # return self.exitStatement()
-            self.consume(TokenType.SEMICOLON, "Expect ';' after 'exit'.")
-            return Exit()
-        return self.expressionStatement()
+        elif self.match(TokenType.EXIT):
+            return self.exitStatement()
+        else:
+            return self.expressionStatement()
 
-    # def exitStatement(self):
-    #     self.consume(TokenType.SEMICOLON, "Expect ';' after 'exit'.")
-    #     return Exit()
+    def exitStatement(self):
+        self.consume(TokenType.SEMICOLON, "Expect ';' after 'exit'.")
+        return Exit()
 
     def forStatement(self):
 
@@ -141,6 +140,7 @@ class Parser:
 
     def expressionStatement(self) -> Stmt:
         expr = self.expression()
+
         self.consume(TokenType.SEMICOLON, "Expect ';' after expression.")
         return Expression(expr)
 

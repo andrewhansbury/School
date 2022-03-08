@@ -11,7 +11,11 @@ class RuntimeErrors (RuntimeError):
         super().__init__(message)
         self.token = token
         
-class BreakExecption(RuntimeError):
+class BreakException(RuntimeError):
+    def __init__(self, *args: object) -> None:
+        super().__init__(*args)
+
+class ContinueException(RuntimeError):
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
 
@@ -41,8 +45,11 @@ class Interpreter:
     #         self.Lox.runtimeError(error)
 
     def visitBreakStmt(self, stmt:Break):
-        raise BreakExecption()
+        raise BreakException()
     
+    def visitContinueStmt(self, stmt:Continue):
+        raise ContinueException()
+        
     def visitBlockStmt(self, stmt: Block):
         self.executeBlock(stmt.statements, Environment(self.environmnent))
         return None
@@ -117,8 +124,16 @@ class Interpreter:
         try:
             while self.isTruthy(self.evaluate(stmt.condition)):
                 self.execute(stmt.body)
-        except BreakExecption as error:
+        except BreakException as error:
             pass
+        except ContinueException as error:
+            if stmt.for_loop:
+                body = stmt.body
+                expr = body.statements[1]
+                self.execute(expr)
+            self.execute(stmt)
+        # finally:
+            # print("HIIIII")
         return None
 
     def visitAssignExpr(self, expr: Assign):
