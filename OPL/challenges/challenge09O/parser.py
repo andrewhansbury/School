@@ -14,8 +14,8 @@ class Parser:
         self.Lox = Lox
         self.tokens = tokens
         self.current = 0
-
-        self.loopDepth = 0
+        
+        self.loopDepth = 0 
 
     # def parse(self):
 
@@ -65,8 +65,7 @@ class Parser:
         expr = self.expression()
         self.consume(TokenType.RIGHT_PAREN, "Expect ')' after switch target.")
 
-        self.consume(TokenType.LEFT_BRACE,
-                     "Expect '{' after switch and target.")
+        self.consume(TokenType.LEFT_BRACE, "Expect '{' after switch and target.")
 
         cases = []
         default = None
@@ -75,46 +74,43 @@ class Parser:
         while not self.check(TokenType.RIGHT_BRACE) and not self.isAtEnd():
             if self.match(TokenType.CASE):
                 if hasDefault:
-                    self.error(self.previous(),
-                               "'default' must be the last branch.")
-                expr = self.expression()
-                self.consume(TokenType.COLON,
-                             "Expect ':' after case expression.")
-                cases.append(Case(expr, self.statement()))
+                    self.error(self.previous(), "'default' must be the last branch.")
+                expr_def = self.expression()
+                self.consume(TokenType.COLON, "Expect ':' after case expression.")
+                cases.append(Case(expr_def, self.statement()))
             elif self.match(TokenType.DEFAULT):
                 if hasDefault:
-                    self.error(self.previous(),
-                               "Only 1 default branch allowed.")
+                    self.error(self.previous(), "Only 1 default branch allowed.")
                     self.synchronize()
-
+                
                 self.consume(TokenType.COLON, "Expect ':' after 'default'.")
                 default = self.statement()
                 hasDefault = True
             else:
-                self.error(
-                    self.peek(), "Every branch of switch must begin with 'case' or 'default'.")
+                self.error(self.peek(), "Every branch of switch must begin with 'case' or 'default'.")
                 self.synchronize()
-
+        
         self.consume(TokenType.RIGHT_BRACE, "Expect '}' after all cases.")
         return Switch(expr, cases, default)
+                
+
 
     def continueStatement(self):
-        if self.loopDepth == 0:
-            self.error(self.previous(),
-                       "'continue' is only allowed in a loop.")
-
+        if self.loopDepth ==0:
+            self.error(self.previous(), "'continue' is only allowed in a loop.")
+            
         self.consume(TokenType.SEMICOLON, "Expect ';' after 'continue'.")
         return Continue()
 
     def breakStatement(self):
-        if self.loopDepth == 0:
-            self.error(self.previous(),
-                       "Must be inside a loop to use 'break'.")
-
+        if self.loopDepth ==0:
+            self.error(self.previous(), "Must be inside a loop to use 'break'.")
+            
         self.consume(TokenType.SEMICOLON, "Expect ';' after 'break'.")
         return Break()
-
+    
     def forStatement(self):
+        
 
         self.consume(TokenType.LEFT_PAREN, "Expect '(' after 'for'.")
 
@@ -139,7 +135,7 @@ class Parser:
         self.consume(TokenType.RIGHT_PAREN, "Expect ')' after for clauses.")
 
         try:
-            self.loopDepth += 1
+            self.loopDepth +=1
             body = self.statement()
 
             # print(body.statements)
@@ -157,7 +153,7 @@ class Parser:
 
             return body
         finally:
-            self.loopDepth -= 1
+            self.loopDepth-=1
 
     def ifStatement(self):
         self.consume(TokenType.LEFT_PAREN, "Expect '(' after 'if'.")
@@ -192,14 +188,14 @@ class Parser:
         self.consume(TokenType.LEFT_PAREN, "Expect '(' after 'while'.")
         condition = self.expression()
         self.consume(TokenType.RIGHT_PAREN, "Expect ')' after condition.")
-
+        
         try:
-            self.loopDepth += 1
+            self.loopDepth +=1
             body = self.statement()
 
             return While(condition, body, False)
         finally:
-            self.loopDepth -= 1
+            self.loopDepth -=1
 
     def expressionStatement(self) -> Stmt:
         expr = self.expression()
@@ -334,11 +330,11 @@ class Parser:
         return False
 
     def consume(self, tok_type: TokenType, message: str) -> Token:
-        try:
-            if self.check(tok_type):
-                return self.advance()
-        except:
-            self.error(self.peek, message)
+    
+        if self.check(tok_type):
+            return self.advance()
+    
+        raise self.error(self.peek(), message)
 
     # MAY NEED SOME WORK!
     # THE LOX MAY NEED TO BE PASSED AS PARAMETER OR SOMETHING
@@ -371,6 +367,8 @@ class Parser:
                 break
             elif tok_type == TokenType.RETURN:
                 return
+            elif tok_type == TokenType.SWITCH:
+                break
             # if self.peek().tok_type == \
             #         TokenType.CLASS or \
             #         TokenType.FUN or \

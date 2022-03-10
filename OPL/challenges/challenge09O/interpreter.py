@@ -46,7 +46,7 @@ class Interpreter:
     def visitSwitchStmt(self, stmt:Switch):
         for case in stmt.cases:
             if self.isEqual(self.evaluate(case.condition), self.evaluate(stmt.condition)):
-                print((case.condition), (stmt.condition))
+                # print((case.condition), (stmt.condition))
                 self.execute(case.body)
                 return
 
