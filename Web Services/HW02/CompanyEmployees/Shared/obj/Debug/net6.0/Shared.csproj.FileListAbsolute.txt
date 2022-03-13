@@ -1,0 +1,12 @@
+C:\Code\School\Web Services\HW02\CompanyEmployees\Shared\bin\Debug\net6.0\Shared.deps.json
+C:\Code\School\Web Services\HW02\CompanyEmployees\Shared\bin\Debug\net6.0\Shared.dll
+C:\Code\School\Web Services\HW02\CompanyEmployees\Shared\bin\Debug\net6.0\ref\Shared.dll
+C:\Code\School\Web Services\HW02\CompanyEmployees\Shared\bin\Debug\net6.0\Shared.pdb
+C:\Code\School\Web Services\HW02\CompanyEmployees\Shared\obj\Debug\net6.0\Shared.csproj.AssemblyReference.cache
+C:\Code\School\Web Services\HW02\CompanyEmployees\Shared\obj\Debug\net6.0\Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Code\School\Web Services\HW02\CompanyEmployees\Shared\obj\Debug\net6.0\Shared.AssemblyInfoInputs.cache
+C:\Code\School\Web Services\HW02\CompanyEmployees\Shared\obj\Debug\net6.0\Shared.AssemblyInfo.cs
+C:\Code\School\Web Services\HW02\CompanyEmployees\Shared\obj\Debug\net6.0\Shared.csproj.CoreCompileInputs.cache
+C:\Code\School\Web Services\HW02\CompanyEmployees\Shared\obj\Debug\net6.0\Shared.dll
+C:\Code\School\Web Services\HW02\CompanyEmployees\Shared\obj\Debug\net6.0\ref\Shared.dll
+C:\Code\School\Web Services\HW02\CompanyEmployees\Shared\obj\Debug\net6.0\Shared.pdb

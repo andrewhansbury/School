@@ -1,0 +1,17 @@
+C:\Code\School\Web Services\HW02\CompanyEmployees\Presentation\bin\Debug\net6.0\Presentation.deps.json
+C:\Code\School\Web Services\HW02\CompanyEmployees\Presentation\bin\Debug\net6.0\Presentation.dll
+C:\Code\School\Web Services\HW02\CompanyEmployees\Presentation\bin\Debug\net6.0\ref\Presentation.dll
+C:\Code\School\Web Services\HW02\CompanyEmployees\Presentation\bin\Debug\net6.0\Presentation.pdb
+C:\Code\School\Web Services\HW02\CompanyEmployees\Presentation\bin\Debug\net6.0\Service.Contracts.dll
+C:\Code\School\Web Services\HW02\CompanyEmployees\Presentation\bin\Debug\net6.0\Service.Contracts.pdb
+C:\Code\School\Web Services\HW02\CompanyEmployees\Presentation\obj\Debug\net6.0\Presentation.csproj.AssemblyReference.cache
+C:\Code\School\Web Services\HW02\CompanyEmployees\Presentation\obj\Debug\net6.0\Presentation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Code\School\Web Services\HW02\CompanyEmployees\Presentation\obj\Debug\net6.0\Presentation.AssemblyInfoInputs.cache
+C:\Code\School\Web Services\HW02\CompanyEmployees\Presentation\obj\Debug\net6.0\Presentation.AssemblyInfo.cs
+C:\Code\School\Web Services\HW02\CompanyEmployees\Presentation\obj\Debug\net6.0\Presentation.csproj.CoreCompileInputs.cache
+C:\Code\School\Web Services\HW02\CompanyEmployees\Presentation\obj\Debug\net6.0\Presentation.csproj.CopyComplete
+C:\Code\School\Web Services\HW02\CompanyEmployees\Presentation\obj\Debug\net6.0\Presentation.dll
+C:\Code\School\Web Services\HW02\CompanyEmployees\Presentation\obj\Debug\net6.0\ref\Presentation.dll
+C:\Code\School\Web Services\HW02\CompanyEmployees\Presentation\obj\Debug\net6.0\Presentation.pdb
+C:\Code\School\Web Services\HW02\CompanyEmployees\Presentation\bin\Debug\net6.0\Shared.dll
+C:\Code\School\Web Services\HW02\CompanyEmployees\Presentation\bin\Debug\net6.0\Shared.pdb

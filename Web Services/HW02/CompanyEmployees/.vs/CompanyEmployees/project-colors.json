@@ -1,0 +1,56 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "36257ba7-3398-4b24-a893-a494b64f40db": {
+      "ProjectGuid": "36257ba7-3398-4b24-a893-a494b64f40db",
+      "DisplayName": "CompanyEmployees",
+      "ColorIndex": 0
+    },
+    "d17c674a-ba39-4722-b992-baa9bbe81bc2": {
+      "ProjectGuid": "d17c674a-ba39-4722-b992-baa9bbe81bc2",
+      "DisplayName": "Contracts",
+      "ColorIndex": 1
+    },
+    "8f24a736-663a-4667-a3be-0aeaa998a0dd": {
+      "ProjectGuid": "8f24a736-663a-4667-a3be-0aeaa998a0dd",
+      "DisplayName": "LoggerService",
+      "ColorIndex": 2
+    },
+    "b9dc14fc-12e3-4443-aba7-25943c250e99": {
+      "ProjectGuid": "b9dc14fc-12e3-4443-aba7-25943c250e99",
+      "DisplayName": "Entities",
+      "ColorIndex": 3
+    },
+    "5084ef32-3362-4145-b211-15794b108fe3": {
+      "ProjectGuid": "5084ef32-3362-4145-b211-15794b108fe3",
+      "DisplayName": "Repository",
+      "ColorIndex": 4
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "5c2dbca7-b8bf-45eb-9b69-691994f47fba": {
+      "ProjectGuid": "5c2dbca7-b8bf-45eb-9b69-691994f47fba",
+      "DisplayName": "Service.Contracts",
+      "ColorIndex": 5
+    },
+    "c59a8ae7-1bef-4fa6-bef0-29898ae83d48": {
+      "ProjectGuid": "c59a8ae7-1bef-4fa6-bef0-29898ae83d48",
+      "DisplayName": "Service",
+      "ColorIndex": 6
+    },
+    "6184ea72-8415-4fa1-ae6f-9e66b76fb6f7": {
+      "ProjectGuid": "6184ea72-8415-4fa1-ae6f-9e66b76fb6f7",
+      "DisplayName": "MiddlewareExample",
+      "ColorIndex": 7
+    },
+    "366162db-eef5-4493-9e95-320b14efa2a1": {
+      "ProjectGuid": "366162db-eef5-4493-9e95-320b14efa2a1",
+      "DisplayName": "Presentation",
+      "ColorIndex": 8
+    }
+  },
+  "NextColorIndex": 9
+}
