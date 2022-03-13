@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Service.Contracts;
-using Shared.DataTransferObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,13 +24,14 @@ namespace Presentation.Controllers
             return Ok(employees);
         }
 
-        [HttpGet("{id:guid}", Name = "GetEmployeeForCompany")]
+        [HttpGet("{id:guid}")]
         public IActionResult GetEmployeeForCompany(Guid companyId, Guid id)
         {
             var employee = _service.EmployeeService.GetEmployee(companyId, id,
             trackChanges: false);
             return Ok(employee);
         }
+<<<<<<< HEAD
 
         [HttpPost]
         public IActionResult CreateEmployeeForCompany(Guid companyId, [FromBody]
@@ -96,6 +96,8 @@ EmployeeForCreationDto employee)
             result.employeeEntity);
             return NoContent();
         }
+=======
+>>>>>>> parent of a013890 (finished through 9)
     }
 
 }

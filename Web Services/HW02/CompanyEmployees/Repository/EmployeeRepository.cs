@@ -22,6 +22,7 @@ namespace Repository
          FindByCondition(e => e.CompanyId.Equals(companyId) && e.Id.Equals(id),
         trackChanges)
          .SingleOrDefault();
+<<<<<<< HEAD
 
         public void CreateEmployeeForCompany(Guid companyId, Employee employee)
         {
@@ -30,5 +31,7 @@ namespace Repository
         }
 
         public void DeleteEmployee(Employee employee) => Delete(employee);
+=======
+>>>>>>> parent of a013890 (finished through 9)
     }
 }

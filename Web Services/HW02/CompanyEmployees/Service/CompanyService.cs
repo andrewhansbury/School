@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using Contracts;
 using Entities.Exceptions;
-using Entities.Models;
 using Service.Contracts;
 
 using Shared.DataTransferObjects;
@@ -35,6 +34,7 @@ namespace Service
             var companyDto = _mapper.Map<CompanyDto>(company);
             return companyDto;
         }
+<<<<<<< HEAD
 
         public async Task<CompanyDto> CreateCompanyAsync(CompanyForCreationDto company)
         {
@@ -91,5 +91,7 @@ namespace Service
             _mapper.Map(companyForUpdate, companyEntity);
             await _repository.SaveAsync();
         }
+=======
+>>>>>>> parent of a013890 (finished through 9)
     }
 }

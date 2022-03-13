@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Presentation.ModelBinders;
 using Service.Contracts;
-using Shared.DataTransferObjects;
 
 namespace CompanyEmployees.Presentation.Controllers
 {
@@ -33,6 +32,7 @@ namespace CompanyEmployees.Presentation.Controllers
             false);
             return Ok(company);
         }
+<<<<<<< HEAD
 
         [HttpPost]
         public async Task<IActionResult> CreateCompany([FromBody] CompanyForCreationDto
@@ -78,5 +78,7 @@ company)
             await _service.CompanyService.UpdateCompanyAsync(id, company, trackChanges: true);
             return NoContent();
         }
+=======
+>>>>>>> parent of a013890 (finished through 9)
     }
 }

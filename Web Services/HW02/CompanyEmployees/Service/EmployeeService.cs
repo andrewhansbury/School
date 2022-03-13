@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using Contracts;
 using Entities.Exceptions;
-using Entities.Models;
 using Service.Contracts;
 using Shared.DataTransferObjects;
 
@@ -43,6 +42,7 @@ namespace Service
             var employee = _mapper.Map<EmployeeDto>(employeeDb);
             return employee;
         }
+<<<<<<< HEAD
 
         public EmployeeDto CreateEmployeeForCompany(Guid companyId, EmployeeForCreationDto
 employeeForCreation, bool trackChanges)
@@ -105,6 +105,8 @@ GetEmployeeForPatch
             _mapper.Map(employeeToPatch, employeeEntity);
             _repository.Save();
         }
+=======
+>>>>>>> parent of a013890 (finished through 9)
     }
 }
 

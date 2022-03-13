@@ -12,6 +12,7 @@ namespace Service.Contracts
     {
         IEnumerable<EmployeeDto> GetEmployees(Guid companyId, bool trackChanges);
         EmployeeDto GetEmployee(Guid companyId, Guid id, bool trackChanges);
+<<<<<<< HEAD
         EmployeeDto CreateEmployeeForCompany(Guid companyId, EmployeeForCreationDto
 employeeForCreation, bool trackChanges);
 
@@ -24,5 +25,7 @@ empTrackChanges);
 Guid companyId, Guid id, bool compTrackChanges, bool empTrackChanges);
         void SaveChangesForPatch(EmployeeForUpdateDto employeeToPatch, Employee
         employeeEntity);
+=======
+>>>>>>> parent of a013890 (finished through 9)
     }
 }

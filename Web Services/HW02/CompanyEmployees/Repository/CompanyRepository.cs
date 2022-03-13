@@ -19,6 +19,7 @@ namespace Repository
         public async Task<IEnumerable<Company>> GetAllCompaniesAsync(bool trackChanges) =>
             await FindAll(trackChanges).OrderBy(c => c.Name).ToListAsync();
 
+<<<<<<< HEAD
         public async Task<Company> GetCompanyAsync(Guid companyId, bool trackChanges) =>
             await FindByCondition(c => c.Id.Equals(companyId), trackChanges).SingleOrDefaultAsync();
         public void CreateCompany(Company company) => Create(company);
@@ -27,6 +28,8 @@ namespace Repository
             await FindByCondition(x => ids.Contains(x.Id), trackChanges).ToListAsync();
 
         public void DeleteCompany(Company company) => Delete(company);
+=======
+>>>>>>> parent of a013890 (finished through 9)
 
     }
 }
