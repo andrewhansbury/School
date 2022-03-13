@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "9t52wd5Qg2N3USypn0vO3Jaz7Mmhs9B4Uq7GmBK3UQdz7CHeuvFCvVrTvNAYCDTmaffr7WPNijVWRkdrTryD9Q==",
+  "dgSpecHash": "5j1NVlTAWH7ScUBSg8BL47MEJyLMD4zFLX7R2MCNpMUjXAEeXWlXRRE8Ddk0ECxgZQhybdohCwK1FTLzrW1hQA==",
   "success": true,
   "projectFilePath": "C:\\Code\\School\\Web Services\\HW02\\CompanyEmployees\\CompanyEmployees\\CompanyEmployees.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Dru\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
+    "C:\\Users\\Dru\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Dru\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\Dru\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Dru\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
