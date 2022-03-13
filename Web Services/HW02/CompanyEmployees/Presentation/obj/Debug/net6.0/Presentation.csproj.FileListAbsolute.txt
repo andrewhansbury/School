@@ -15,3 +15,5 @@ C:\Code\School\Web Services\HW02\CompanyEmployees\Presentation\obj\Debug\net6.0\
 C:\Code\School\Web Services\HW02\CompanyEmployees\Presentation\obj\Debug\net6.0\Presentation.pdb
 C:\Code\School\Web Services\HW02\CompanyEmployees\Presentation\bin\Debug\net6.0\Shared.dll
 C:\Code\School\Web Services\HW02\CompanyEmployees\Presentation\bin\Debug\net6.0\Shared.pdb
+C:\Code\School\Web Services\HW02\CompanyEmployees\Presentation\bin\Debug\net6.0\Entities.dll
+C:\Code\School\Web Services\HW02\CompanyEmployees\Presentation\bin\Debug\net6.0\Entities.pdb

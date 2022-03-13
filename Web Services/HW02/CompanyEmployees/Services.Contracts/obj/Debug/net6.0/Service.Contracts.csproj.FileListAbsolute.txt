@@ -25,3 +25,5 @@ C:\Code\School\Web Services\HW02\CompanyEmployees\Services.Contracts\obj\Debug\n
 C:\Code\School\Web Services\HW02\CompanyEmployees\Services.Contracts\obj\Debug\net6.0\Service.Contracts.pdb
 C:\Code\School\Web Services\HW02\CompanyEmployees\Services.Contracts\bin\Debug\net6.0\Shared.dll
 C:\Code\School\Web Services\HW02\CompanyEmployees\Services.Contracts\bin\Debug\net6.0\Shared.pdb
+C:\Code\School\Web Services\HW02\CompanyEmployees\Services.Contracts\bin\Debug\net6.0\Entities.dll
+C:\Code\School\Web Services\HW02\CompanyEmployees\Services.Contracts\bin\Debug\net6.0\Entities.pdb
