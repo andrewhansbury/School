@@ -50,7 +50,12 @@
       "ProjectGuid": "366162db-eef5-4493-9e95-320b14efa2a1",
       "DisplayName": "Presentation",
       "ColorIndex": 8
+    },
+    "e1d63337-d4c9-4ce6-a254-bdcf6bb1905e": {
+      "ProjectGuid": "e1d63337-d4c9-4ce6-a254-bdcf6bb1905e",
+      "DisplayName": "Shared",
+      "ColorIndex": 9
     }
   },
-  "NextColorIndex": 9
+  "NextColorIndex": 10
 }

@@ -1,0 +1,303 @@
+﻿++Solution 'CompanyEmployees' ‎(9 of 10 projects)
+i:{00000000-0000-0000-0000-000000000000}:CompanyEmployees.sln
+++MiddlewareExample (unloaded)
+i:{00000000-0000-0000-0000-000000000000}:MiddlewareExample
+++Shared
+i:{00000000-0000-0000-0000-000000000000}:Shared
+i:{5c2dbca7-b8bf-45eb-9b69-691994f47fba}:c:\code\school\web services\hw02\companyemployees\shared\bin\debug\net6.0\shared.dll
+++Dependencies
+i:{e1d63337-d4c9-4ce6-a254-bdcf6bb1905e}:>1785
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:>1274
+i:{d17c674a-ba39-4722-b992-baa9bbe81bc2}:>984
+i:{8f24a736-663a-4667-a3be-0aeaa998a0dd}:>944
+i:{b9dc14fc-12e3-4443-aba7-25943c250e99}:>1421
+i:{5084ef32-3362-4145-b211-15794b108fe3}:>1411
+i:{5c2dbca7-b8bf-45eb-9b69-691994f47fba}:>1559
+i:{c59a8ae7-1bef-4fa6-bef0-29898ae83d48}:>1681
+i:{366162db-eef5-4493-9e95-320b14efa2a1}:>1682
+++DataTransferObjects
+i:{e1d63337-d4c9-4ce6-a254-bdcf6bb1905e}:c:\code\school\web services\hw02\companyemployees\shared\datatransferobjects\
+++CompanyDto.cs
+i:{e1d63337-d4c9-4ce6-a254-bdcf6bb1905e}:c:\code\school\web services\hw02\companyemployees\shared\datatransferobjects\companydto.cs
+++Analyzers
+i:{e1d63337-d4c9-4ce6-a254-bdcf6bb1905e}:analyzers
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:analyzers
+i:{d17c674a-ba39-4722-b992-baa9bbe81bc2}:analyzers
+i:{8f24a736-663a-4667-a3be-0aeaa998a0dd}:analyzers
+i:{b9dc14fc-12e3-4443-aba7-25943c250e99}:analyzers
+i:{5084ef32-3362-4145-b211-15794b108fe3}:analyzers
+i:{5c2dbca7-b8bf-45eb-9b69-691994f47fba}:analyzers
+i:{c59a8ae7-1bef-4fa6-bef0-29898ae83d48}:analyzers
+i:{366162db-eef5-4493-9e95-320b14efa2a1}:analyzers
+++Frameworks
+i:{e1d63337-d4c9-4ce6-a254-bdcf6bb1905e}:frameworks
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:frameworks
+i:{d17c674a-ba39-4722-b992-baa9bbe81bc2}:frameworks
+i:{8f24a736-663a-4667-a3be-0aeaa998a0dd}:frameworks
+i:{b9dc14fc-12e3-4443-aba7-25943c250e99}:frameworks
+i:{5084ef32-3362-4145-b211-15794b108fe3}:frameworks
+i:{5c2dbca7-b8bf-45eb-9b69-691994f47fba}:frameworks
+i:{c59a8ae7-1bef-4fa6-bef0-29898ae83d48}:frameworks
+i:{366162db-eef5-4493-9e95-320b14efa2a1}:frameworks
+++Microsoft.CodeAnalysis.CSharp.NetAnalyzers
+i:{e1d63337-d4c9-4ce6-a254-bdcf6bb1905e}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{d17c674a-ba39-4722-b992-baa9bbe81bc2}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{8f24a736-663a-4667-a3be-0aeaa998a0dd}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{b9dc14fc-12e3-4443-aba7-25943c250e99}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{5084ef32-3362-4145-b211-15794b108fe3}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{5c2dbca7-b8bf-45eb-9b69-691994f47fba}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{c59a8ae7-1bef-4fa6-bef0-29898ae83d48}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{366162db-eef5-4493-9e95-320b14efa2a1}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+++Microsoft.CodeAnalysis.NetAnalyzers
+i:{e1d63337-d4c9-4ce6-a254-bdcf6bb1905e}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{d17c674a-ba39-4722-b992-baa9bbe81bc2}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{8f24a736-663a-4667-a3be-0aeaa998a0dd}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{b9dc14fc-12e3-4443-aba7-25943c250e99}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{5084ef32-3362-4145-b211-15794b108fe3}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{5c2dbca7-b8bf-45eb-9b69-691994f47fba}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{c59a8ae7-1bef-4fa6-bef0-29898ae83d48}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{366162db-eef5-4493-9e95-320b14efa2a1}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+++System.Text.Json.SourceGeneration
+i:{e1d63337-d4c9-4ce6-a254-bdcf6bb1905e}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.1\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.1\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{d17c674a-ba39-4722-b992-baa9bbe81bc2}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.1\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{8f24a736-663a-4667-a3be-0aeaa998a0dd}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.1\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{b9dc14fc-12e3-4443-aba7-25943c250e99}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.1\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{5084ef32-3362-4145-b211-15794b108fe3}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.1\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{5c2dbca7-b8bf-45eb-9b69-691994f47fba}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.1\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{c59a8ae7-1bef-4fa6-bef0-29898ae83d48}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.1\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{366162db-eef5-4493-9e95-320b14efa2a1}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.1\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+++Microsoft.NETCore.App
+i:{e1d63337-d4c9-4ce6-a254-bdcf6bb1905e}:c:\code\school\web services\hw02\companyemployees\shared\microsoft.netcore.app
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\code\school\web services\hw02\companyemployees\companyemployees\microsoft.netcore.app
+i:{d17c674a-ba39-4722-b992-baa9bbe81bc2}:c:\code\school\web services\hw02\companyemployees\contracts\microsoft.netcore.app
+i:{8f24a736-663a-4667-a3be-0aeaa998a0dd}:c:\code\school\web services\hw02\companyemployees\loggerservice\microsoft.netcore.app
+i:{b9dc14fc-12e3-4443-aba7-25943c250e99}:c:\code\school\web services\hw02\companyemployees\entities\microsoft.netcore.app
+i:{5084ef32-3362-4145-b211-15794b108fe3}:c:\code\school\web services\hw02\companyemployees\repository\microsoft.netcore.app
+i:{5c2dbca7-b8bf-45eb-9b69-691994f47fba}:c:\code\school\web services\hw02\companyemployees\services.contracts\microsoft.netcore.app
+i:{c59a8ae7-1bef-4fa6-bef0-29898ae83d48}:c:\code\school\web services\hw02\companyemployees\service\microsoft.netcore.app
+i:{366162db-eef5-4493-9e95-320b14efa2a1}:c:\code\school\web services\hw02\companyemployees\presentation\microsoft.netcore.app
+++CompanyEmployees
+i:{00000000-0000-0000-0000-000000000000}:CompanyEmployees
+++Connected Services 
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:>1275
+++Properties
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\code\school\web services\hw02\companyemployees\companyemployees\properties\
+++launchSettings.json
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\code\school\web services\hw02\companyemployees\companyemployees\properties\launchsettings.json
+++ContextFactory
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\code\school\web services\hw02\companyemployees\companyemployees\contextfactory\
+++Extensions
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\code\school\web services\hw02\companyemployees\companyemployees\extensions\
+++internal_logs
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\code\school\web services\hw02\companyemployees\companyemployees\internal_logs\
+++Migrations
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\code\school\web services\hw02\companyemployees\companyemployees\migrations\
+++appsettings.json
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\code\school\web services\hw02\companyemployees\companyemployees\appsettings.json
+++MappingProfile.cs
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\code\school\web services\hw02\companyemployees\companyemployees\mappingprofile.cs
+++nlog.config
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\code\school\web services\hw02\companyemployees\companyemployees\nlog.config
+++Program.cs
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\code\school\web services\hw02\companyemployees\companyemployees\program.cs
+++No service dependencies discovered
+++Packages
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:packages
+i:{8f24a736-663a-4667-a3be-0aeaa998a0dd}:packages
+i:{5084ef32-3362-4145-b211-15794b108fe3}:packages
+i:{366162db-eef5-4493-9e95-320b14efa2a1}:packages
+i:{c59a8ae7-1bef-4fa6-bef0-29898ae83d48}:packages
+++Projects
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:projects
+i:{d17c674a-ba39-4722-b992-baa9bbe81bc2}:projects
+i:{8f24a736-663a-4667-a3be-0aeaa998a0dd}:projects
+i:{5084ef32-3362-4145-b211-15794b108fe3}:projects
+i:{5c2dbca7-b8bf-45eb-9b69-691994f47fba}:projects
+i:{c59a8ae7-1bef-4fa6-bef0-29898ae83d48}:projects
+i:{366162db-eef5-4493-9e95-320b14efa2a1}:projects
+++RepositoryContextFactory.cs
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\code\school\web services\hw02\companyemployees\companyemployees\contextfactory\repositorycontextfactory.cs
+++ServiceExtensions.cs
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\code\school\web services\hw02\companyemployees\companyemployees\extensions\serviceextensions.cs
+++internallog.txt
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\code\school\web services\hw02\companyemployees\companyemployees\internal_logs\internallog.txt
+++20220116181246_DatabaseCreation.cs
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\code\school\web services\hw02\companyemployees\companyemployees\migrations\20220116181246_databasecreation.cs
+++20220116184949_InitialData.cs
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\code\school\web services\hw02\companyemployees\companyemployees\migrations\20220116184949_initialdata.cs
+++RepositoryContextModelSnapshot.cs
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\code\school\web services\hw02\companyemployees\companyemployees\migrations\repositorycontextmodelsnapshot.cs
+++appsettings.Development.json
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\code\school\web services\hw02\companyemployees\companyemployees\appsettings.development.json
+++appsettings.Production.json
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\code\school\web services\hw02\companyemployees\companyemployees\appsettings.production.json
+++Microsoft.AspNetCore.Analyzers
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
+++Microsoft.AspNetCore.App.Analyzers
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
+i:{366162db-eef5-4493-9e95-320b14efa2a1}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
+++Microsoft.AspNetCore.App.CodeFixes
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
+i:{366162db-eef5-4493-9e95-320b14efa2a1}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
+++Microsoft.AspNetCore.Components.Analyzers
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
+++Microsoft.AspNetCore.Mvc.Analyzers
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
+++Microsoft.AspNetCore.Razor.Internal.SourceGenerator.Transport
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk.razor\source-generators\microsoft.aspnetcore.razor.internal.sourcegenerator.transport.dll
+++Microsoft.EntityFrameworkCore.Analyzers
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\users\dru\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.1\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{5084ef32-3362-4145-b211-15794b108fe3}:c:\users\dru\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.1\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+++Microsoft.Extensions.Logging.Generators
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+i:{5084ef32-3362-4145-b211-15794b108fe3}:c:\users\dru\.nuget\packages\microsoft.extensions.logging.abstractions\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+i:{366162db-eef5-4493-9e95-320b14efa2a1}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+++Microsoft.NET.Sdk.Razor.SourceGenerators
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk.razor\source-generators\microsoft.net.sdk.razor.sourcegenerators.dll
+++Microsoft.AspNetCore.App
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\code\school\web services\hw02\companyemployees\companyemployees\microsoft.aspnetcore.app
+++AutoMapper.Extensions.Microsoft.DependencyInjection (11.0.0)
+i:{c59a8ae7-1bef-4fa6-bef0-29898ae83d48}:>1880
+++Microsoft.EntityFrameworkCore.SqlServer (6.0.1)
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:>1716
+++Microsoft.EntityFrameworkCore.Tools (6.0.1)
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:>1719
+++NLog.Extensions.Logging (1.7.4)
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:>1717
+i:{8f24a736-663a-4667-a3be-0aeaa998a0dd}:>1762
+++LoggerService
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\code\school\web services\hw02\companyemployees\loggerservice\loggerservice.csproj
+i:{00000000-0000-0000-0000-000000000000}:LoggerService
+++Presentation
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\code\school\web services\hw02\companyemployees\presentation\presentation.csproj
+i:{00000000-0000-0000-0000-000000000000}:Presentation
+++Repository
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\code\school\web services\hw02\companyemployees\repository\repository.csproj
+i:{00000000-0000-0000-0000-000000000000}:Repository
+++Service
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\code\school\web services\hw02\companyemployees\service\service.csproj
+i:{00000000-0000-0000-0000-000000000000}:Service
+++20220116181246_DatabaseCreation.Designer.cs
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\code\school\web services\hw02\companyemployees\companyemployees\migrations\20220116181246_databasecreation.designer.cs
+++20220116184949_InitialData.Designer.cs
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\code\school\web services\hw02\companyemployees\companyemployees\migrations\20220116184949_initialdata.designer.cs
+++Contracts
+i:{00000000-0000-0000-0000-000000000000}:Contracts
+i:{8f24a736-663a-4667-a3be-0aeaa998a0dd}:c:\code\school\web services\hw02\companyemployees\contracts\bin\debug\net6.0\contracts.dll
+i:{5084ef32-3362-4145-b211-15794b108fe3}:c:\code\school\web services\hw02\companyemployees\contracts\bin\debug\net6.0\contracts.dll
+i:{c59a8ae7-1bef-4fa6-bef0-29898ae83d48}:c:\code\school\web services\hw02\companyemployees\contracts\bin\debug\net6.0\contracts.dll
+++ICompanyRepository.cs
+i:{d17c674a-ba39-4722-b992-baa9bbe81bc2}:c:\code\school\web services\hw02\companyemployees\contracts\icompanyrepository.cs
+++IEmployeeRepository.cs
+i:{d17c674a-ba39-4722-b992-baa9bbe81bc2}:c:\code\school\web services\hw02\companyemployees\contracts\iemployeerepository.cs
+++ILoggerManager.cs
+i:{d17c674a-ba39-4722-b992-baa9bbe81bc2}:c:\code\school\web services\hw02\companyemployees\contracts\iloggermanager.cs
+++IRepositoryBase.cs
+i:{d17c674a-ba39-4722-b992-baa9bbe81bc2}:c:\code\school\web services\hw02\companyemployees\contracts\irepositorybase.cs
+++IRepositoryManager.cs
+i:{d17c674a-ba39-4722-b992-baa9bbe81bc2}:c:\code\school\web services\hw02\companyemployees\contracts\irepositorymanager.cs
+++Entities
+i:{d17c674a-ba39-4722-b992-baa9bbe81bc2}:c:\code\school\web services\hw02\companyemployees\entities\bin\debug\net6.0\entities.dll
+i:{00000000-0000-0000-0000-000000000000}:Entities
+i:{5084ef32-3362-4145-b211-15794b108fe3}:c:\code\school\web services\hw02\companyemployees\entities\bin\debug\net6.0\entities.dll
+i:{5c2dbca7-b8bf-45eb-9b69-691994f47fba}:c:\code\school\web services\hw02\companyemployees\entities\bin\debug\net6.0\entities.dll
+++LoggerManager.cs
+i:{8f24a736-663a-4667-a3be-0aeaa998a0dd}:c:\code\school\web services\hw02\companyemployees\loggerservice\loggermanager.cs
+++Models
+i:{b9dc14fc-12e3-4443-aba7-25943c250e99}:c:\code\school\web services\hw02\companyemployees\entities\models\
+++Company.cs
+i:{b9dc14fc-12e3-4443-aba7-25943c250e99}:c:\code\school\web services\hw02\companyemployees\entities\models\company.cs
+++Configuration
+i:{5084ef32-3362-4145-b211-15794b108fe3}:c:\code\school\web services\hw02\companyemployees\repository\configuration\
+++CompanyRepository.cs
+i:{5084ef32-3362-4145-b211-15794b108fe3}:c:\code\school\web services\hw02\companyemployees\repository\companyrepository.cs
+++EmployeeRepository.cs
+i:{5084ef32-3362-4145-b211-15794b108fe3}:c:\code\school\web services\hw02\companyemployees\repository\employeerepository.cs
+++RepositoryBase.cs
+i:{5084ef32-3362-4145-b211-15794b108fe3}:c:\code\school\web services\hw02\companyemployees\repository\repositorybase.cs
+++RepositoryContext.cs
+i:{5084ef32-3362-4145-b211-15794b108fe3}:c:\code\school\web services\hw02\companyemployees\repository\repositorycontext.cs
+++RepositoryManager.cs
+i:{5084ef32-3362-4145-b211-15794b108fe3}:c:\code\school\web services\hw02\companyemployees\repository\repositorymanager.cs
+++CompanyConfiguration.cs
+i:{5084ef32-3362-4145-b211-15794b108fe3}:c:\code\school\web services\hw02\companyemployees\repository\configuration\companyconfiguration.cs
+++EmployeeConfiguration.cs
+i:{5084ef32-3362-4145-b211-15794b108fe3}:c:\code\school\web services\hw02\companyemployees\repository\configuration\employeeconfiguration.cs
+++Microsoft.EntityFrameworkCore (6.0.1)
+i:{5084ef32-3362-4145-b211-15794b108fe3}:>1698
+++Service.Contracts
+i:{00000000-0000-0000-0000-000000000000}:Service.Contracts
+i:{c59a8ae7-1bef-4fa6-bef0-29898ae83d48}:c:\code\school\web services\hw02\companyemployees\services.contracts\bin\debug\net6.0\service.contracts.dll
+i:{366162db-eef5-4493-9e95-320b14efa2a1}:c:\code\school\web services\hw02\companyemployees\services.contracts\bin\debug\net6.0\service.contracts.dll
+++ICompanyService.cs
+i:{5c2dbca7-b8bf-45eb-9b69-691994f47fba}:c:\code\school\web services\hw02\companyemployees\services.contracts\icompanyservice.cs
+++IEmployeeService.cs
+i:{5c2dbca7-b8bf-45eb-9b69-691994f47fba}:c:\code\school\web services\hw02\companyemployees\services.contracts\iemployeeservice.cs
+++IServiceManager.cs
+i:{5c2dbca7-b8bf-45eb-9b69-691994f47fba}:c:\code\school\web services\hw02\companyemployees\services.contracts\iservicemanager.cs
+++CompanyService.cs
+i:{c59a8ae7-1bef-4fa6-bef0-29898ae83d48}:c:\code\school\web services\hw02\companyemployees\service\companyservice.cs
+++EmployeeService.cs
+i:{c59a8ae7-1bef-4fa6-bef0-29898ae83d48}:c:\code\school\web services\hw02\companyemployees\service\employeeservice.cs
+++ServiceManager.cs
+i:{c59a8ae7-1bef-4fa6-bef0-29898ae83d48}:c:\code\school\web services\hw02\companyemployees\service\servicemanager.cs
+++Controllers
+i:{366162db-eef5-4493-9e95-320b14efa2a1}:c:\code\school\web services\hw02\companyemployees\presentation\controllers\
+++AssemblyReference.cs
+i:{366162db-eef5-4493-9e95-320b14efa2a1}:c:\code\school\web services\hw02\companyemployees\presentation\assemblyreference.cs
+++CompaniesController.cs
+i:{366162db-eef5-4493-9e95-320b14efa2a1}:c:\code\school\web services\hw02\companyemployees\presentation\controllers\companiescontroller.cs
+++Microsoft.AspNetCore.Mvc.Core (2.2.5)
+i:{366162db-eef5-4493-9e95-320b14efa2a1}:>1744
+++SQL Server Database
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:>1876
+++SQL Server Database dependency is detected
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:>1877
+++AutoMapper (11.0.1)
+i:{c59a8ae7-1bef-4fa6-bef0-29898ae83d48}:>1879
+++NewFolder
+++ErrorModel
+i:{b9dc14fc-12e3-4443-aba7-25943c250e99}:c:\code\school\web services\hw02\companyemployees\entities\errormodel\
+++ErrorDetails.cs
+i:{b9dc14fc-12e3-4443-aba7-25943c250e99}:c:\code\school\web services\hw02\companyemployees\entities\errormodel\errordetails.cs
+++ExceptionMiddlewareExtensions.cs
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\code\school\web services\hw02\companyemployees\companyemployees\extensions\exceptionmiddlewareextensions.cs
+++Exceptions
+i:{b9dc14fc-12e3-4443-aba7-25943c250e99}:c:\code\school\web services\hw02\companyemployees\entities\exceptions\
+++NotFoundException.cs
+i:{b9dc14fc-12e3-4443-aba7-25943c250e99}:c:\code\school\web services\hw02\companyemployees\entities\exceptions\notfoundexception.cs
+++CompanyNotFoundException.cs
+i:{b9dc14fc-12e3-4443-aba7-25943c250e99}:c:\code\school\web services\hw02\companyemployees\entities\exceptions\companynotfoundexception.cs
+++EmployeesController.cs
+i:{366162db-eef5-4493-9e95-320b14efa2a1}:c:\code\school\web services\hw02\companyemployees\presentation\controllers\employeescontroller.cs
+++EmployeeDto.cs
+i:{e1d63337-d4c9-4ce6-a254-bdcf6bb1905e}:c:\code\school\web services\hw02\companyemployees\shared\datatransferobjects\employeedto.cs
+++EmployeeNotFoundException.cs
+i:{b9dc14fc-12e3-4443-aba7-25943c250e99}:c:\code\school\web services\hw02\companyemployees\entities\exceptions\employeenotfoundexception.cs
+++CsvOutputFormatter.cs
+i:{36257ba7-3398-4b24-a893-a494b64f40db}:c:\code\school\web services\hw02\companyemployees\companyemployees\csvoutputformatter.cs
+++CompanyForCreationDto.cs
+++EmployeeForCreation.cs
+++BadRequestException.cs
+++IdParametersBadRequestException.cs
+++CollectionByIdsBadRequestException.cs
+++Class1.csCompanyCollectionBadRequest.cs
+++ModelBinders
+i:{366162db-eef5-4493-9e95-320b14efa2a1}:c:\code\school\web services\hw02\companyemployees\presentation\modelbinders\
+++ArrayModelBinder.cs
+i:{366162db-eef5-4493-9e95-320b14efa2a1}:c:\code\school\web services\hw02\companyemployees\presentation\modelbinders\arraymodelbinder.cs
+++EmployeeForUpdateDto.cs
+i:{e1d63337-d4c9-4ce6-a254-bdcf6bb1905e}:c:\code\school\web services\hw02\companyemployees\shared\datatransferobjects\employeeforupdatedto.cs
+++CompanyForUpdateDto.cs
+i:{e1d63337-d4c9-4ce6-a254-bdcf6bb1905e}:c:\code\school\web services\hw02\companyemployees\shared\datatransferobjects\companyforupdatedto.cs
+++Microsoft.AspNetCore.JsonPatch (6.0.3)
+i:{366162db-eef5-4493-9e95-320b14efa2a1}:>1932
+++Microsoft.AspNetCore.Mvc.NewtonsoftJson (6.0.3)
+i:{366162db-eef5-4493-9e95-320b14efa2a1}:>1955
+++EmployeeForCreationDto.cs
+i:{e1d63337-d4c9-4ce6-a254-bdcf6bb1905e}:c:\code\school\web services\hw02\companyemployees\shared\datatransferobjects\employeeforcreationdto.cs
+++EmployeeForManipulationDto.cs
+i:{e1d63337-d4c9-4ce6-a254-bdcf6bb1905e}:c:\code\school\web services\hw02\companyemployees\shared\datatransferobjects\employeeformanipulationdto.cs
